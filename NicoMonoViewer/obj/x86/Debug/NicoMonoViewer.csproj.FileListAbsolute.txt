@@ -1,0 +1,5 @@
+C:\Users\aoisensi\Dropbox\Mono\NicoMonoViewer\NicoMonoViewer\bin\Debug\NicoMonoViewer.exe
+C:\Users\aoisensi\Dropbox\Mono\NicoMonoViewer\NicoMonoViewer\bin\Debug\NicoMonoViewer.pdb
+C:\Users\aoisensi\Dropbox\Mono\NicoMonoViewer\NicoMonoViewer\obj\x86\Debug\NicoMonoViewer.csprojResolveAssemblyReference.cache
+C:\Users\aoisensi\Dropbox\Mono\NicoMonoViewer\NicoMonoViewer\obj\x86\Debug\NicoMonoViewer.exe
+C:\Users\aoisensi\Dropbox\Mono\NicoMonoViewer\NicoMonoViewer\obj\x86\Debug\NicoMonoViewer.pdb
