@@ -89,7 +89,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Dialog" id="LoginDialog" design-size="400 150">
+  <widget class="Gtk.Dialog" id="LoginDialog" design-size="400 230">
     <property name="MemberName" />
     <property name="WindowPosition">CenterOnParent</property>
     <property name="Modal">True</property>
@@ -101,6 +101,57 @@
       <widget class="Gtk.VBox" id="dialog_VBox">
         <property name="MemberName" />
         <property name="BorderWidth">2</property>
+        <child>
+          <widget class="Gtk.RadioButton" id="radiobuttonBrowser">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Label" translatable="yes">ブラウザとCookieを共有する</property>
+            <property name="Active">False</property>
+            <property name="DrawIndicator">True</property>
+            <property name="HasLabel">True</property>
+            <property name="UseUnderline">True</property>
+            <property name="Group">group1</property>
+            <signal name="Toggled" handler="OnRadiobuttonBrowserToggled" />
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ComboBox" id="comboboxBrowser">
+            <property name="MemberName" />
+            <property name="IsTextCombo">True</property>
+            <property name="Items" translatable="yes" />
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.RadioButton" id="radiobuttonLogin">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Label" translatable="yes">直接ログインする</property>
+            <property name="Active">False</property>
+            <property name="DrawIndicator">True</property>
+            <property name="HasLabel">True</property>
+            <property name="UseUnderline">True</property>
+            <property name="Group">group1</property>
+            <signal name="Toggled" handler="OnRadiobuttonLoginToggled" />
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
         <child>
           <widget class="Gtk.Table" id="table">
             <property name="MemberName" />
@@ -189,11 +240,10 @@
             </child>
           </widget>
           <packing>
-            <property name="Position">0</property>
+            <property name="Position">3</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
-            <property name="Padding">6</property>
           </packing>
         </child>
       </widget>

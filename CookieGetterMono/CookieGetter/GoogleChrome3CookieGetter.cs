@@ -43,7 +43,6 @@ namespace CookieGetterMono
 		{
 			Stack<string> hostStack = new Stack<string>(url.Host.Split('.'));
 			StringBuilder hostBuilder = new StringBuilder('.' + hostStack.Pop());
-			string[] pathes = url.Segments;
 
 			StringBuilder sb = new StringBuilder();
 			sb.Append(" WHERE (");

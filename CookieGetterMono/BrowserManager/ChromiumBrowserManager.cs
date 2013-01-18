@@ -6,9 +6,20 @@ namespace CookieGetterMono
 {
 	class ChromiumBrowserManager : IBrowserManager
 	{
-		const string COOKIEPATH = "%LOCALAPPDATA%\\Chromium\\User Data\\Default\\Cookies";
 
-		#region IBrowserManager ?????o
+		string GetCookiePath ()
+		{
+			switch (Environment.OSVersion.Platform) {
+			case PlatformID.Win32Windows:
+				return "%LOCALAPPDATA%\\Chromium\\User Data\\Default\\Cookies";
+			case PlatformID.Unix:
+				return "%APPDATA%/chromium/Default/Cookies";
+			default:
+				throw new Exception("対応してないよ");
+			}
+		}
+
+		#region IBrowserManager メンバ
 
 		public BrowserType BrowserType
 		{
@@ -17,7 +28,7 @@ namespace CookieGetterMono
 
 		public ICookieGetter CreateDefaultCookieGetter()
 		{
-			string path = Utility.ReplacePathSymbols(COOKIEPATH);
+			string path = Utility.ReplacePathSymbols(GetCookiePath());
 
 			if (!System.IO.File.Exists(path)) {
 				path = null;
@@ -30,6 +41,12 @@ namespace CookieGetterMono
 		public ICookieGetter[] CreateCookieGetters()
 		{
 			return new ICookieGetter[] { CreateDefaultCookieGetter() };
+		}
+
+		public bool IsAbleOS()
+		{
+			PlatformID p = Environment.OSVersion.Platform;
+			return p == PlatformID.Unix || p == PlatformID.Win32Windows;
 		}
 
 		#endregion

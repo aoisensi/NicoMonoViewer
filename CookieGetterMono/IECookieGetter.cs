@@ -31,8 +31,6 @@ namespace CookieGetterMono
 			List<string> files = SelectFiles(url, GetAllFiles());
 			List<System.Net.Cookie> cookies = new List<System.Net.Cookie>();
 			foreach (string filepath in files) {
-				System.Net.CookieContainer container = new System.Net.CookieContainer();
-
 				foreach (System.Net.Cookie cookie in PickCookiesFromFile(filepath)) {
 					if (cookie.Name.Equals(key)) {
 						cookies.Add(cookie);

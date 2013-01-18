@@ -9,8 +9,7 @@ namespace NicoMonoLibrary
 {
 	public class User
 	{
-		CookieContainer cc;
-		string _xml;
+		CookieContainer _cc;
 		public User (string email, string password)
 		{
 			string url = "https://secure.nicovideo.jp/secure/login?site=nicolive";
@@ -32,7 +31,7 @@ namespace NicoMonoLibrary
 			ServicePointManager.CertificatePolicy = new MyPolicy();
 
 			//HTTP POSTリクエストの作成
-			cc = new CookieContainer(); //認証用クッキーを格納するコンテナ
+			_cc = new CookieContainer(); //認証用クッキーを格納するコンテナ
 			WebRequest wreq = WebRequest.Create(url);
 			HttpWebRequest req = (HttpWebRequest)wreq;
 			req.Method = "POST";
@@ -49,11 +48,6 @@ namespace NicoMonoLibrary
 			//GET実行
 			WebResponse res = req.GetResponse();
 			Stream resStream = res.GetResponseStream();
-
-			Encoding encoder = Encoding.GetEncoding("UTF-8");
-			StreamReader sr = new StreamReader(resStream, encoder);
-			_xml = sr.ReadToEnd();
-			sr.Close();
 			resStream.Close();
 
 			//Console.WriteLine("○ログインAPIレスポンス取得");
@@ -65,10 +59,14 @@ namespace NicoMonoLibrary
 			//sw.Write(xml);
 			//sw.Close();
 		}
-
-		public string xml {
+		public User (Cookie cookie)
+		{
+			_cc = new CookieContainer();
+			_cc.Add(cookie);
+		}
+		public CookieContainer cc {
 			get {
-				return _xml;
+				return _cc;
 			}
 		}
 	}

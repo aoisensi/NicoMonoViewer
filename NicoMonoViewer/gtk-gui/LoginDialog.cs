@@ -3,6 +3,9 @@
 
 public partial class LoginDialog
 {
+	private global::Gtk.RadioButton radiobuttonBrowser;
+	private global::Gtk.ComboBox comboboxBrowser;
+	private global::Gtk.RadioButton radiobuttonLogin;
 	private global::Gtk.Table table;
 	private global::Gtk.Entry entryMail;
 	private global::Gtk.Entry entryPass;
@@ -25,6 +28,40 @@ public partial class LoginDialog
 		w1.Name = "dialog_VBox";
 		w1.BorderWidth = ((uint)(2));
 		// Container child dialog_VBox.Gtk.Box+BoxChild
+		this.radiobuttonBrowser = new global::Gtk.RadioButton (global::Mono.Unix.Catalog.GetString ("ブラウザとCookieを共有する"));
+		this.radiobuttonBrowser.CanFocus = true;
+		this.radiobuttonBrowser.Name = "radiobuttonBrowser";
+		this.radiobuttonBrowser.Active = false;
+		this.radiobuttonBrowser.DrawIndicator = true;
+		this.radiobuttonBrowser.UseUnderline = true;
+		this.radiobuttonBrowser.Group = new global::GLib.SList (global::System.IntPtr.Zero);
+		w1.Add (this.radiobuttonBrowser);
+		global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(w1 [this.radiobuttonBrowser]));
+		w2.Position = 0;
+		w2.Expand = false;
+		w2.Fill = false;
+		// Container child dialog_VBox.Gtk.Box+BoxChild
+		this.comboboxBrowser = global::Gtk.ComboBox.NewText ();
+		this.comboboxBrowser.Name = "comboboxBrowser";
+		w1.Add (this.comboboxBrowser);
+		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(w1 [this.comboboxBrowser]));
+		w3.Position = 1;
+		w3.Expand = false;
+		w3.Fill = false;
+		// Container child dialog_VBox.Gtk.Box+BoxChild
+		this.radiobuttonLogin = new global::Gtk.RadioButton (global::Mono.Unix.Catalog.GetString ("直接ログインする"));
+		this.radiobuttonLogin.CanFocus = true;
+		this.radiobuttonLogin.Name = "radiobuttonLogin";
+		this.radiobuttonLogin.Active = false;
+		this.radiobuttonLogin.DrawIndicator = true;
+		this.radiobuttonLogin.UseUnderline = true;
+		this.radiobuttonLogin.Group = this.radiobuttonBrowser.Group;
+		w1.Add (this.radiobuttonLogin);
+		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(w1 [this.radiobuttonLogin]));
+		w4.Position = 2;
+		w4.Expand = false;
+		w4.Fill = false;
+		// Container child dialog_VBox.Gtk.Box+BoxChild
 		this.table = new global::Gtk.Table (((uint)(2)), ((uint)(2)), false);
 		this.table.Name = "table";
 		this.table.RowSpacing = ((uint)(6));
@@ -36,10 +73,10 @@ public partial class LoginDialog
 		this.entryMail.IsEditable = true;
 		this.entryMail.InvisibleChar = '●';
 		this.table.Add (this.entryMail);
-		global::Gtk.Table.TableChild w2 = ((global::Gtk.Table.TableChild)(this.table [this.entryMail]));
-		w2.LeftAttach = ((uint)(1));
-		w2.RightAttach = ((uint)(2));
-		w2.YOptions = ((global::Gtk.AttachOptions)(4));
+		global::Gtk.Table.TableChild w5 = ((global::Gtk.Table.TableChild)(this.table [this.entryMail]));
+		w5.LeftAttach = ((uint)(1));
+		w5.RightAttach = ((uint)(2));
+		w5.YOptions = ((global::Gtk.AttachOptions)(4));
 		// Container child table.Gtk.Table+TableChild
 		this.entryPass = new global::Gtk.Entry ();
 		this.entryPass.CanFocus = true;
@@ -48,42 +85,41 @@ public partial class LoginDialog
 		this.entryPass.Visibility = false;
 		this.entryPass.InvisibleChar = '•';
 		this.table.Add (this.entryPass);
-		global::Gtk.Table.TableChild w3 = ((global::Gtk.Table.TableChild)(this.table [this.entryPass]));
-		w3.TopAttach = ((uint)(1));
-		w3.BottomAttach = ((uint)(2));
-		w3.LeftAttach = ((uint)(1));
-		w3.RightAttach = ((uint)(2));
-		w3.YOptions = ((global::Gtk.AttachOptions)(4));
+		global::Gtk.Table.TableChild w6 = ((global::Gtk.Table.TableChild)(this.table [this.entryPass]));
+		w6.TopAttach = ((uint)(1));
+		w6.BottomAttach = ((uint)(2));
+		w6.LeftAttach = ((uint)(1));
+		w6.RightAttach = ((uint)(2));
+		w6.YOptions = ((global::Gtk.AttachOptions)(4));
 		// Container child table.Gtk.Table+TableChild
 		this.labelMail = new global::Gtk.Label ();
 		this.labelMail.Name = "labelMail";
 		this.labelMail.LabelProp = global::Mono.Unix.Catalog.GetString ("メールアドレス");
 		this.table.Add (this.labelMail);
-		global::Gtk.Table.TableChild w4 = ((global::Gtk.Table.TableChild)(this.table [this.labelMail]));
-		w4.XOptions = ((global::Gtk.AttachOptions)(4));
-		w4.YOptions = ((global::Gtk.AttachOptions)(4));
+		global::Gtk.Table.TableChild w7 = ((global::Gtk.Table.TableChild)(this.table [this.labelMail]));
+		w7.XOptions = ((global::Gtk.AttachOptions)(4));
+		w7.YOptions = ((global::Gtk.AttachOptions)(4));
 		// Container child table.Gtk.Table+TableChild
 		this.labelPass = new global::Gtk.Label ();
 		this.labelPass.Name = "labelPass";
 		this.labelPass.LabelProp = global::Mono.Unix.Catalog.GetString ("パスワード");
 		this.table.Add (this.labelPass);
-		global::Gtk.Table.TableChild w5 = ((global::Gtk.Table.TableChild)(this.table [this.labelPass]));
-		w5.TopAttach = ((uint)(1));
-		w5.BottomAttach = ((uint)(2));
-		w5.XOptions = ((global::Gtk.AttachOptions)(4));
-		w5.YOptions = ((global::Gtk.AttachOptions)(4));
+		global::Gtk.Table.TableChild w8 = ((global::Gtk.Table.TableChild)(this.table [this.labelPass]));
+		w8.TopAttach = ((uint)(1));
+		w8.BottomAttach = ((uint)(2));
+		w8.XOptions = ((global::Gtk.AttachOptions)(4));
+		w8.YOptions = ((global::Gtk.AttachOptions)(4));
 		w1.Add (this.table);
-		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(w1 [this.table]));
-		w6.Position = 0;
-		w6.Expand = false;
-		w6.Fill = false;
-		w6.Padding = ((uint)(6));
+		global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(w1 [this.table]));
+		w9.Position = 3;
+		w9.Expand = false;
+		w9.Fill = false;
 		// Internal child LoginDialog.ActionArea
-		global::Gtk.HButtonBox w7 = this.ActionArea;
-		w7.Name = "dialog_ActionArea";
-		w7.Spacing = 10;
-		w7.BorderWidth = ((uint)(5));
-		w7.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
+		global::Gtk.HButtonBox w10 = this.ActionArea;
+		w10.Name = "dialog_ActionArea";
+		w10.Spacing = 10;
+		w10.BorderWidth = ((uint)(5));
+		w10.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
 		// Container child dialog_ActionArea.Gtk.ButtonBox+ButtonBoxChild
 		this.buttonCancel = new global::Gtk.Button ();
 		this.buttonCancel.CanDefault = true;
@@ -93,9 +129,9 @@ public partial class LoginDialog
 		this.buttonCancel.UseUnderline = true;
 		this.buttonCancel.Label = "gtk-cancel";
 		this.AddActionWidget (this.buttonCancel, -6);
-		global::Gtk.ButtonBox.ButtonBoxChild w8 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w7 [this.buttonCancel]));
-		w8.Expand = false;
-		w8.Fill = false;
+		global::Gtk.ButtonBox.ButtonBoxChild w11 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w10 [this.buttonCancel]));
+		w11.Expand = false;
+		w11.Fill = false;
 		// Container child dialog_ActionArea.Gtk.ButtonBox+ButtonBoxChild
 		this.buttonOk = new global::Gtk.Button ();
 		this.buttonOk.CanDefault = true;
@@ -105,15 +141,17 @@ public partial class LoginDialog
 		this.buttonOk.UseUnderline = true;
 		this.buttonOk.Label = "gtk-ok";
 		this.AddActionWidget (this.buttonOk, -5);
-		global::Gtk.ButtonBox.ButtonBoxChild w9 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w7 [this.buttonOk]));
-		w9.Position = 1;
-		w9.Expand = false;
-		w9.Fill = false;
+		global::Gtk.ButtonBox.ButtonBoxChild w12 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w10 [this.buttonOk]));
+		w12.Position = 1;
+		w12.Expand = false;
+		w12.Fill = false;
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
 		this.DefaultWidth = 400;
-		this.DefaultHeight = 150;
+		this.DefaultHeight = 230;
 		this.Show ();
+		this.radiobuttonBrowser.Toggled += new global::System.EventHandler (this.OnRadiobuttonBrowserToggled);
+		this.radiobuttonLogin.Toggled += new global::System.EventHandler (this.OnRadiobuttonLoginToggled);
 	}
 }

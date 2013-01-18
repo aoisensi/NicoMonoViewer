@@ -25,6 +25,13 @@ namespace CookieGetterMono
 		/// </summary>
 		/// <returns></returns>
 		ICookieGetter[] CreateCookieGetters();
+
+		/// <summary>
+		/// 現在のOSで利用可能か判断します
+		/// </summary>
+		/// <returns></returns>
+		/// メソッド名思いつかない誰か変えてくれ
+		bool IsAbleOS();
 		
 	}
 }

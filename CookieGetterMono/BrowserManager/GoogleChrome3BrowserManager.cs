@@ -4,15 +4,15 @@ using System.Text;
 
 namespace CookieGetterMono
 {
-	class Lunascape5GeckoBrowserManager : IBrowserManager
+	class GoogleChrome3BrowserManager : IBrowserManager
 	{
-		const string COOKIEPATH = "%APPDATA%\\Lunascape\\Lunascape5\\ApplicationData\\gecko\\cookies.sqlite";
+		const string COOKIEPATH = "%LOCALAPPDATA%\\Google\\Chrome\\User Data\\Default\\Cookies";
 
 		#region IBrowserManager メンバ
 
 		public BrowserType BrowserType
 		{
-			get { return BrowserType.Lunascape5Gecko; }
+			get { return BrowserType.GoogleChrome3; }
 		}
 
 		public ICookieGetter CreateDefaultCookieGetter()
@@ -23,13 +23,19 @@ namespace CookieGetterMono
 				path = null;
 			}
 
-			CookieStatus status = new CookieStatus("Lunascape5 Gecko", path, this.BrowserType, PathType.File);
-			return new Firefox3CookieGetter(status);
+			CookieStatus status = new CookieStatus(this.BrowserType.ToString(), path, this.BrowserType, PathType.File);
+			return new GoogleChrome3CookieGetter(status);
 		}
 
 		public ICookieGetter[] CreateCookieGetters()
 		{
 			return new ICookieGetter[] { CreateDefaultCookieGetter() };
+		}
+
+		public bool IsAbleOS()
+		{
+			PlatformID p = Environment.OSVersion.Platform;
+			return p == PlatformID.Win32Windows;
 		}
 
 		#endregion

@@ -19,16 +19,16 @@ namespace CookieGetterMono
 		static CookieGetter()
 		{
 			_browserManagers = new IBrowserManager[]{
-				new IEBrowserManager(),
-				new IEComponentBrowserManager(),
-				new IESafemodeBrowserManager(),
-				new Firefox3BrowserManager(),
+//				new IEBrowserManager(),
+//				new IEComponentBrowserManager(),
+//				new IESafemodeBrowserManager(),
+//				new Firefox3BrowserManager(),
 				new GoogleChrome3BrowserManager(),
-				new Opera10BrowserManager(),
-				new Safari4BrowserManager(),
-				new Lunascape5GeckoBrowserManager(),
-				new Lunascape6GeckoBrowserManager(),
-				new Lunascape6WebkitBrowserManager(),
+//				new Opera10BrowserManager(),
+//				new Safari4BrowserManager(),
+//				new Lunascape5GeckoBrowserManager(),
+//				new Lunascape6GeckoBrowserManager(),
+//				new Lunascape6WebkitBrowserManager(),
 				new ChromiumBrowserManager()				
 			};
 		}
