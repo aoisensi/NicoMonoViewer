@@ -11,8 +11,7 @@ public partial class MainWindow
 	private global::Gtk.Action themeAction;
 	private global::Gtk.VBox vbox;
 	private global::Gtk.MenuBar menubar;
-	private global::Gtk.ScrolledWindow GtkScrolledWindow;
-	private global::Gtk.TextView textview1;
+	private global::Gtk.Notebook notebook;
 	
 	protected virtual void Build ()
 	{
@@ -54,18 +53,15 @@ public partial class MainWindow
 		w2.Expand = false;
 		w2.Fill = false;
 		// Container child vbox.Gtk.Box+BoxChild
-		this.GtkScrolledWindow = new global::Gtk.ScrolledWindow ();
-		this.GtkScrolledWindow.Name = "GtkScrolledWindow";
-		this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
-		// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
-		this.textview1 = new global::Gtk.TextView ();
-		this.textview1.Buffer.Text = "test";
-		this.textview1.CanFocus = true;
-		this.textview1.Name = "textview1";
-		this.GtkScrolledWindow.Add (this.textview1);
-		this.vbox.Add (this.GtkScrolledWindow);
-		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox [this.GtkScrolledWindow]));
-		w4.Position = 1;
+		this.notebook = new global::Gtk.Notebook ();
+		this.notebook.CanFocus = true;
+		this.notebook.Name = "notebook";
+		this.notebook.CurrentPage = -1;
+		this.vbox.Add (this.notebook);
+		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox [this.notebook]));
+		w3.Position = 1;
+		w3.Expand = false;
+		w3.Fill = false;
 		this.Add (this.vbox);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();

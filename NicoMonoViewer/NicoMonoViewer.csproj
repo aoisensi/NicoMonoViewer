@@ -56,6 +56,9 @@
       <Private>False</Private>
       <Package>monodevelop</Package>
     </Reference>
+    <Reference Include="libstetic">
+      <HintPath>..\..\..\..\..\usr\lib\monodevelop\AddIns\MonoDevelop.GtkCore\libstetic.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -72,6 +75,8 @@
     <Compile Include="gtk-gui\LoginDialog.cs" />
     <Compile Include="ThemesDialog.cs" />
     <Compile Include="gtk-gui\ThemesDialog.cs" />
+    <Compile Include="NicorepoMainWidget.cs" />
+    <Compile Include="gtk-gui\NicorepoMainWidget.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

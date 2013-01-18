@@ -149,7 +149,7 @@ public partial class LoginDialog
 			this.Child.ShowAll ();
 		}
 		this.DefaultWidth = 400;
-		this.DefaultHeight = 230;
+		this.DefaultHeight = 213;
 		this.Show ();
 		this.radiobuttonBrowser.Toggled += new global::System.EventHandler (this.OnRadiobuttonBrowserToggled);
 		this.radiobuttonLogin.Toggled += new global::System.EventHandler (this.OnRadiobuttonLoginToggled);

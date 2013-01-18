@@ -3,11 +3,16 @@ using Gtk;
 
 public partial class MainWindow: Gtk.Window
 {	
-	NicoMonoLibrary.User user = null;
+	NicoMonoLibrary.User user;
 
 	public MainWindow (): base (Gtk.WindowType.Toplevel)
 	{
 		Build ();
+		if (user == null) {
+			OnLoginActionActivated(null, null);
+		}
+		notebook.AppendPage(new NicorepoMainWidget(user),new Label("ニコレポ"));
+		notebook.ShowAll();
 	}
 	
 	protected void OnDeleteEvent (object sender, DeleteEventArgs a)
@@ -31,11 +36,9 @@ public partial class MainWindow: Gtk.Window
 
 	protected void GetLoginDialogResponse (object sender, ResponseArgs args)
 	{
-
 		if (args.ResponseId == ResponseType.Ok) {
 			LoginDialog dialog = (LoginDialog)sender;
 			user = dialog.GetUserData();
-			this.textview1.Buffer.Text = user.cc.ToString();
 		}
 	}
 	protected void OnThemeActionActivated (object sender, EventArgs e)
@@ -50,8 +53,7 @@ public partial class MainWindow: Gtk.Window
 	void GetThemeDialogResponse (object sender, ResponseArgs args)
 	{
 		if (args.ResponseId == ResponseType.Ok) {
-			ThemesDialog dialog = (ThemesDialog)sender;
-			Gtk.Rc.Parse(dialog.selectedThemePath);
+			//ThemesDialog dialog = (ThemesDialog)sender;
 		}
 	}
 }
