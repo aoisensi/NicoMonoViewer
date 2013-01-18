@@ -35,9 +35,7 @@ public partial class MainWindow: Gtk.Window
 		if (args.ResponseId == ResponseType.Ok) {
 			LoginDialog dialog = (LoginDialog)sender;
 			user = dialog.GetUserData();
-			MessageDialog md = new MessageDialog(this, DialogFlags.Modal, MessageType.Other, ButtonsType.Ok, user.xml);
-			md.Run();
-			md.Destroy();
+			this.textview1.Buffer.Text = user.xml;
 		}
 	}
 	protected void OnThemeActionActivated (object sender, EventArgs e)
