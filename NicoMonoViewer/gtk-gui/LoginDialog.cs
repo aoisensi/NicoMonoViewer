@@ -44,7 +44,7 @@ public partial class LoginDialog
 		this.entryPass = new global::Gtk.Entry ();
 		this.entryPass.CanFocus = true;
 		this.entryPass.Name = "entryPass";
-		this.entryPass.IsEditable = false;
+		this.entryPass.IsEditable = true;
 		this.entryPass.Visibility = false;
 		this.entryPass.InvisibleChar = '•';
 		this.table.Add (this.entryPass);

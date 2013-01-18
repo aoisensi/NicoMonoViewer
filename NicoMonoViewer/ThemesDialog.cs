@@ -1,17 +1,26 @@
 using System;
-using MonoDevelop.Core;
+using System.IO;
+
 
 public partial class ThemesDialog : Gtk.Dialog
 {
+	String themesDir;
 	public ThemesDialog ()
 	{
 		this.Build ();
-		Load();
-	}
-
-	void Load ()
-	{
+		//get theme list
 		comboboxTheme.AppendText("デフォルト");
+		themesDir = Gtk.Rc.ThemeDir;
+		foreach (string themeDir in Directory.GetDirectories(themesDir,"*",SearchOption.TopDirectoryOnly))
+		{
+			comboboxTheme.AppendText(System.IO.Path.GetFileName(themeDir));
+		}
+		comboboxTheme.Active = 0;
+	}
+	public string selectedThemePath {
+		get {
+			return System.IO.Path.Combine(themesDir, comboboxTheme.ActiveText);
+		}
 	}
 }
 

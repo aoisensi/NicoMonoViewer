@@ -41,9 +41,17 @@ public partial class MainWindow: Gtk.Window
 	protected void OnThemeActionActivated (object sender, EventArgs e)
 	{
 		ThemesDialog dialog = new ThemesDialog();
+		dialog.Response += new ResponseHandler(GetThemeDialogResponse);
 		dialog.Run();
 		dialog.Destroy();
 	}
 
 
+	void GetThemeDialogResponse (object sender, ResponseArgs args)
+	{
+		if (args.ResponseId == ResponseType.Ok) {
+			ThemesDialog dialog = (ThemesDialog)sender;
+			Gtk.Rc.Parse(dialog.selectedThemePath);
+		}
+	}
 }

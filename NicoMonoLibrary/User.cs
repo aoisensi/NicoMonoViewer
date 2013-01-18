@@ -29,6 +29,8 @@ namespace NicoMonoLibrary
 			}
 			byte[] data = Encoding.ASCII.GetBytes(param);
 
+			ServicePointManager.CertificatePolicy = new MyPolicy();
+
 			//HTTP POSTリクエストの作成
 			cc = new CookieContainer(); //認証用クッキーを格納するコンテナ
 			WebRequest wreq = WebRequest.Create(url);

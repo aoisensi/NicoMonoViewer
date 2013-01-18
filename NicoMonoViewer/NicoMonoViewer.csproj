@@ -70,13 +70,14 @@
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="LoginDialog.cs" />
     <Compile Include="gtk-gui\LoginDialog.cs" />
-    <Compile Include="NicoMonoLibrary\User.cs" />
-    <Compile Include="NicoMonoLibrary\Exception.cs" />
     <Compile Include="ThemesDialog.cs" />
     <Compile Include="gtk-gui\ThemesDialog.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Folder Include="NicoMonoLibrary\" />
+    <ProjectReference Include="..\NicoMonoLibrary\NicoMonoLibrary.csproj">
+      <Project>{97E989F3-89B1-4A36-8A9A-21470C4207C0}</Project>
+      <Name>NicoMonoLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
