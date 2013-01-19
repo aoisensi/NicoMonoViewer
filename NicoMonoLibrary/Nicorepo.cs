@@ -49,7 +49,7 @@ namespace NicoMonoLibrary
 
 			HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes ("/ul[@id='SYS_THREADS' and @class='myContList nicorepo']/li");
 			foreach (var node in nodes) {
-				new NicorepoItem(node.OuterHtml);
+				new NicorepoItem(node);
 				Console.WriteLine(node.InnerHtml);
 				Console.WriteLine("-------------------------------");
 			}
