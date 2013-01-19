@@ -13,7 +13,7 @@ namespace NicoMonoLibrary
 		public Nicorepo (User user)
 		{
 			_user = user;
-			HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://www.nicovideo.jp/api/my/tlget");
+			HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://www.nicovideo.jp/api/my/tlget?is_mypage=1");
 			req.CookieContainer = user.cc;
 
 			WebResponse res = req.GetResponse();

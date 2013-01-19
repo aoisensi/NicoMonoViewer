@@ -26,5 +26,6 @@ public partial class NicorepoMainWidget
 			this.Child.ShowAll ();
 		}
 		this.Hide ();
+		this.Shown += new global::System.EventHandler (this.OnShown);
 	}
 }

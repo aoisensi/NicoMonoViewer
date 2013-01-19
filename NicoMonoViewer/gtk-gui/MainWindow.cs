@@ -12,6 +12,8 @@ public partial class MainWindow
 	private global::Gtk.VBox vbox;
 	private global::Gtk.MenuBar menubar;
 	private global::Gtk.Notebook notebook;
+	private global::NicorepoMainWidget nicorepomainwidget1;
+	private global::Gtk.Label label1;
 	
 	protected virtual void Build ()
 	{
@@ -56,18 +58,27 @@ public partial class MainWindow
 		this.notebook = new global::Gtk.Notebook ();
 		this.notebook.CanFocus = true;
 		this.notebook.Name = "notebook";
-		this.notebook.CurrentPage = -1;
+		this.notebook.CurrentPage = 0;
+		// Container child notebook.Gtk.Notebook+NotebookChild
+		this.nicorepomainwidget1 = new global::NicorepoMainWidget ();
+		this.nicorepomainwidget1.Events = ((global::Gdk.EventMask)(256));
+		this.nicorepomainwidget1.Name = "nicorepomainwidget1";
+		this.notebook.Add (this.nicorepomainwidget1);
+		// Notebook tab
+		this.label1 = new global::Gtk.Label ();
+		this.label1.Name = "label1";
+		this.label1.LabelProp = global::Mono.Unix.Catalog.GetString ("ニコレポ");
+		this.notebook.SetTabLabel (this.nicorepomainwidget1, this.label1);
+		this.label1.ShowAll ();
 		this.vbox.Add (this.notebook);
-		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox [this.notebook]));
-		w3.Position = 1;
-		w3.Expand = false;
-		w3.Fill = false;
+		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox [this.notebook]));
+		w4.Position = 1;
 		this.Add (this.vbox);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
 		this.DefaultWidth = 571;
-		this.DefaultHeight = 300;
+		this.DefaultHeight = 295;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.quitAction.Activated += new global::System.EventHandler (this.OnQuitActionActivated);
