@@ -5,18 +5,27 @@ namespace NicoMonoLibrary
 {
 	public class NicorepoItem
 	{
-		bool isFriend = true;
-		bool isUserThumb = true;
-		bool isRepThumb = true;
+		bool hasFriend = false;
+		bool hasUserThumb = false;
+		bool hasRepThumb = false;
 		NicorepoItemType type;
 		public NicorepoItem (HtmlNode node)
 		{
+			HtmlNode n1;
+			n1 = node.SelectSingleNode ("div[@class='userThumb friend']");
+			if (n1 != null) {
+				hasFriend = true;
+			}
 
-			isFriend = node.SelectSingleNode("div[@class='userThumb friend']") != null;
+			n1 = node.SelectSingleNode ("div[@class='userThumb']");
+			if (n1 != null) {
+				hasUserThumb = true;
+			}
 
-			isUserThumb = node.SelectSingleNode("div[@class='userThumb']") != null;
-
-			isRepThumb = node.SelectSingleNode("div[@class='repThumb']/") != null;
+			n1 = node.SelectSingleNode ("div[@class='repThumb']");
+			if (n1 != null) {
+				hasRepThumb = true;
+			}
 
 		}
 	}

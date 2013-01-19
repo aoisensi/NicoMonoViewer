@@ -15,9 +15,9 @@ public partial class NicorepoMainWidget : Gtk.Bin
 		MainWindow window = (MainWindow)(Gtk.Window)Toplevel;
 		NicoMonoLibrary.User user = window.user;
 		nicorepo = new NicoMonoLibrary.Nicorepo(user);
-		LoadPage();
-		//thread = new Thread(new ThreadStart(LoadPage));
-		//thread.Start();
+		//LoadPage();
+		thread = new Thread(new ThreadStart(LoadPage));
+		thread.Start();
 	}
 
 	void LoadPage()

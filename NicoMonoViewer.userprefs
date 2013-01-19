@@ -1,8 +1,10 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="NicoMonoViewer/LoginDialog.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="NicoMonoLibrary/NicorepoItem.cs">
     <Files>
-      <File FileName="NicoMonoViewer/LoginDialog.cs" Line="17" Column="3" />
+      <File FileName="NicoMonoLibrary/Nicorepo.cs" Line="52" Column="26" />
+      <File FileName="NicoMonoViewer/NicorepoItem/sample.html" Line="88" Column="10" />
+      <File FileName="NicoMonoLibrary/NicorepoItem.cs" Line="20" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

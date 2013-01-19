@@ -44,14 +44,15 @@ namespace NicoMonoLibrary
 
 		public void HtmlParser (string html)
 		{
+
 			HtmlDocument doc = new HtmlDocument ();
+
 			doc.LoadHtml (html);
 
 			HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes ("/ul[@id='SYS_THREADS' and @class='myContList nicorepo']/li");
-			foreach (var node in nodes) {
-				new NicorepoItem(node);
-				Console.WriteLine(node.InnerHtml);
-				Console.WriteLine("-------------------------------");
+			foreach (HtmlNode node in nodes) {
+				items.Add(new NicorepoItem(node));
+
 			}
 		}
 	}
