@@ -31,7 +31,7 @@ public partial class LoginDialog
 		this.radiobuttonBrowser = new global::Gtk.RadioButton (global::Mono.Unix.Catalog.GetString ("ブラウザとCookieを共有する"));
 		this.radiobuttonBrowser.CanFocus = true;
 		this.radiobuttonBrowser.Name = "radiobuttonBrowser";
-		this.radiobuttonBrowser.Active = false;
+		this.radiobuttonBrowser.Active = true;
 		this.radiobuttonBrowser.DrawIndicator = true;
 		this.radiobuttonBrowser.UseUnderline = true;
 		this.radiobuttonBrowser.Group = new global::GLib.SList (global::System.IntPtr.Zero);
@@ -52,7 +52,6 @@ public partial class LoginDialog
 		this.radiobuttonLogin = new global::Gtk.RadioButton (global::Mono.Unix.Catalog.GetString ("直接ログインする"));
 		this.radiobuttonLogin.CanFocus = true;
 		this.radiobuttonLogin.Name = "radiobuttonLogin";
-		this.radiobuttonLogin.Active = false;
 		this.radiobuttonLogin.DrawIndicator = true;
 		this.radiobuttonLogin.UseUnderline = true;
 		this.radiobuttonLogin.Group = this.radiobuttonBrowser.Group;

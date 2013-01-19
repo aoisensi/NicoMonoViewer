@@ -2,6 +2,10 @@ using System;
 using System.Net;
 using System.IO;
 using System.Text;
+using System.Collections.Generic;
+using System.Xml;
+using System.Xml.XPath;
+using HtmlAgilityPack;
 
 namespace NicoMonoLibrary
 {
@@ -9,20 +13,46 @@ namespace NicoMonoLibrary
 	{
 		static Encoding encoder = Encoding.GetEncoding("UTF-8");
 		User _user;
-		public string result;
+		public List<string> htmls = new List<string>();
+		public List<NicorepoItem> items = new List<NicorepoItem>();
+		string nexturl = "http://www.nicovideo.jp/api/my/tlget?is_mypage=1";
 		public Nicorepo (User user)
 		{
 			_user = user;
-			HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://www.nicovideo.jp/api/my/tlget?is_mypage=1");
-			req.CookieContainer = user.cc;
+		}
+		public void GetNextPage ()
+		{
+			HttpWebRequest req = (HttpWebRequest)WebRequest.Create (nexturl);
+			req.CookieContainer = _user.cc;
+			
+			WebResponse res = req.GetResponse ();
+			
+			Stream resStream = res.GetResponseStream ();
+			StreamReader sr = new StreamReader (resStream, encoder);
+			string html = sr.ReadToEnd ();
+			sr.Close ();
+			resStream.Close ();
+			htmls.Add (html);
+			HtmlParser(html);
+			//パーサ
 
-			WebResponse res = req.GetResponse();
+				//"ul[@id='SYS_THREADS' and @class='myContList nicorepo']/li"
 
-			Stream resStream = res.GetResponseStream();
-			StreamReader sr = new StreamReader(resStream, encoder);
-			result = sr.ReadToEnd();
-			sr.Close();
-			resStream.Close();
+
+
+		}
+
+		public void HtmlParser (string html)
+		{
+			HtmlDocument doc = new HtmlDocument ();
+			doc.LoadHtml (html);
+
+			HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes ("/ul[@id='SYS_THREADS' and @class='myContList nicorepo']/li");
+			foreach (var node in nodes) {
+				new NicorepoItem(node.OuterHtml);
+				Console.WriteLine(node.InnerHtml);
+				Console.WriteLine("-------------------------------");
+			}
 		}
 	}
 }

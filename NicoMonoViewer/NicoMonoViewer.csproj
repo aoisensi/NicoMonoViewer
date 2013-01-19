@@ -77,7 +77,6 @@
     <Compile Include="gtk-gui\ThemesDialog.cs" />
     <Compile Include="NicorepoMainWidget.cs" />
     <Compile Include="gtk-gui\NicorepoMainWidget.cs" />
-    <Compile Include="gtk-gui\NicoMonoViewer.WelcomeMainWidget.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -89,5 +88,8 @@
       <Project>{F8907DF2-A763-413F-82DD-C62A3C027A92}</Project>
       <Name>CookieGetterMono</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NicorepoItem\sample.html" />
   </ItemGroup>
 </Project>
