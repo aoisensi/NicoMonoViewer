@@ -7,10 +7,10 @@ using System.Collections;
 
 namespace NicoMonoLibrary
 {
-	public class User
+	public class NicoUser
 	{
 		CookieContainer _cc;
-		public User (string email, string password)
+		public NicoUser (string email, string password)
 		{
 			string url = "https://secure.nicovideo.jp/secure/login?site=nicolive";
 			//ログイン・ページへのアクセスパラメタ
@@ -58,7 +58,7 @@ namespace NicoMonoLibrary
 			//sw.Write(xml);
 			//sw.Close();
 		}
-		public User (Cookie cookie)
+		public NicoUser (Cookie cookie)
 		{
 			_cc = new CookieContainer();
 			_cc.Add(cookie);

@@ -13,7 +13,7 @@ public partial class NicorepoMainWidget : Gtk.Bin
 	protected void OnShown (object sender, EventArgs a)
 	{
 		MainWindow window = (MainWindow)(Gtk.Window)Toplevel;
-		NicoMonoLibrary.User user = window.user;
+		NicoMonoLibrary.NicoUser user = window.user;
 		nicorepo = new NicoMonoLibrary.Nicorepo(user);
 		//LoadPage();
 		thread = new Thread(new ThreadStart(LoadPage));

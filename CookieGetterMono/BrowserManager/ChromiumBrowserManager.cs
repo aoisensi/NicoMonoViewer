@@ -15,7 +15,7 @@ namespace CookieGetterMono
 			case PlatformID.Unix:
 				return "%APPDATA%/chromium/Default/Cookies";
 			default:
-				throw new Exception("対応してないよ");
+				return "";
 			}
 		}
 

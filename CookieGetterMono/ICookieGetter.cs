@@ -38,8 +38,6 @@ namespace CookieGetterMono
 		/// <exception cref="CookieGetterException"></exception>
 		/// <returns></returns>
 		System.Net.CookieContainer GetAllCookies();
-
 		
-
 	}
 }

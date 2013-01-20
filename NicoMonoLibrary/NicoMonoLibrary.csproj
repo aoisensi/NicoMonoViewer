@@ -44,9 +44,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="User.cs" />
     <Compile Include="Nicorepo.cs" />
     <Compile Include="NicorepoItem.cs" />
+    <Compile Include="NicoUser.cs" />
+    <Compile Include="INicorepoItem.cs" />
+    <Compile Include="NicorepoItem\NicorepoItemCommunityLiveBroadcast.cs" />
+    <Compile Include="NicorepoItem\NicorepoItemUnknow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="NicorepoItem\" />
+  </ItemGroup>
 </Project>

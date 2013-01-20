@@ -3,7 +3,7 @@ using Gtk;
 
 public partial class MainWindow: Gtk.Window
 {	
-	public NicoMonoLibrary.User user;
+	public NicoMonoLibrary.NicoUser user;
 
 	public MainWindow (): base (Gtk.WindowType.Toplevel)
 	{

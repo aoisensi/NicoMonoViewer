@@ -14,15 +14,15 @@ public partial class LoginDialog : Gtk.Dialog
 		LoadBrowserList();
 	}
 
-	public NicoMonoLibrary.User GetUserData ()
+	public NicoMonoLibrary.NicoUser GetUserData ()
 	{
 		if (radiobuttonBrowser.Active) {
 			ICookieGetter cg = cgs[comboboxBrowser.Active];
 			CookieCollection collection = cg.GetCookieCollection(new Uri("http://live.nicovideo.jp/"));
 			Cookie cookie = collection["user_session"];
-			return new NicoMonoLibrary.User (cookie);
+			return new NicoMonoLibrary.NicoUser (cookie);
 		} else {
-			return new NicoMonoLibrary.User (this.entryMail.Text, this.entryPass.Text);
+			return new NicoMonoLibrary.NicoUser (this.entryMail.Text, this.entryPass.Text);
 		}
 	}
 	

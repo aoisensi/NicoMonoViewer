@@ -5,35 +5,30 @@ namespace NicoMonoLibrary
 {
 	public class NicorepoItem
 	{
-		bool hasFriend = false;
-		bool hasUserThumb = false;
-		bool hasRepThumb = false;
-		NicorepoItemType type;
-		public NicorepoItem (HtmlNode node)
+		static INicorepoItem[] _nicorepoItem;
+		static INicorepoItem _nicorepoItemUnknow;
+
+		static NicorepoItem ()
 		{
-			HtmlNode n1;
-			n1 = node.SelectSingleNode ("div[@class='userThumb friend']");
-			if (n1 != null) {
-				hasFriend = true;
-			}
-
-			n1 = node.SelectSingleNode ("div[@class='userThumb']");
-			if (n1 != null) {
-				hasUserThumb = true;
-			}
-
-			n1 = node.SelectSingleNode ("div[@class='repThumb']");
-			if (n1 != null) {
-				hasRepThumb = true;
-			}
-
+			_nicorepoItem = new INicorepoItem[]{
+				new NicorepoItemCommunityLiveBroadcast()
+			};
+			_nicorepoItemUnknow = new NicorepoItemUnknow();
 		}
-	}
 
-	public enum NicorepoItemType{
-		Nothing,
-		ComLiveStart,
-		Other
+		public static INicorepoItem CreateInstance (HtmlNode node)
+		{
+			string[] className = node.Attributes["class"].Value.Split(' ');
+			string type = className[className.Length - 1];
+			foreach (INicorepoItem item in _nicorepoItem) {
+				if(type == item.ClassName){
+					item.Parser(node);
+					return item;
+				}
+			}
+			_nicorepoItemUnknow.Parser(node);
+			return _nicorepoItemUnknow;
+		}
 	}
 }
 

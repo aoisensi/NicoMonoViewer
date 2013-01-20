@@ -12,11 +12,11 @@ namespace NicoMonoLibrary
 	public class Nicorepo
 	{
 		static Encoding encoder = Encoding.GetEncoding("UTF-8");
-		User _user;
+		NicoUser _user;
 		public List<string> htmls = new List<string>();
-		public List<NicorepoItem> items = new List<NicorepoItem>();
-		string nexturl = "http://www.nicovideo.jp/api/my/tlget?is_mypage=1";
-		public Nicorepo (User user)
+		public List<INicorepoItem> items = new List<INicorepoItem>();
+		string nexturl = "http://www.nicovideo.jp/my/top/all?innerPage=1&mode=next_page";
+		public Nicorepo (NicoUser user)
 		{
 			_user = user;
 		}
@@ -34,12 +34,6 @@ namespace NicoMonoLibrary
 			resStream.Close ();
 			htmls.Add (html);
 			HtmlParser(html);
-			//パーサ
-
-				//"ul[@id='SYS_THREADS' and @class='myContList nicorepo']/li"
-
-
-
 		}
 
 		public void HtmlParser (string html)
@@ -48,12 +42,12 @@ namespace NicoMonoLibrary
 			HtmlDocument doc = new HtmlDocument ();
 
 			doc.LoadHtml (html);
-
-			HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes ("/ul[@id='SYS_THREADS' and @class='myContList nicorepo']/li");
+			HtmlNode nicorepoPage = doc.DocumentNode.SelectSingleNode("/div[@class='nicorepo']/div[@class='nicorepo-page']");
+			HtmlNodeCollection nodes = nicorepoPage.SelectNodes ("div[@class='timeline']/div");
 			foreach (HtmlNode node in nodes) {
-				items.Add(new NicorepoItem(node));
-
+				items.Add(NicorepoItem.CreateInstance(node));
 			}
+			nexturl = "http://www.nicovideo.jp" + nicorepoPage.SelectSingleNode("div[@class='next-page']/a[@class='next-page-link']/@href").InnerText;
 		}
 	}
 }
