@@ -13,6 +13,12 @@ namespace NicoMonoLibrary
 		{
 			html = node.OuterHtml;
 		}
+
+		public string Html {
+			get {
+				return html;
+			}
+		}
 	}
 }
 

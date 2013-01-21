@@ -64,19 +64,25 @@
     <EmbeddedResource Include="gtk-gui\gui.stetic">
       <LogicalName>gui.stetic</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Pictures\loading.gif" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="gtk-gui\generated.cs" />
     <Compile Include="MainWindow.cs" />
-    <Compile Include="gtk-gui\MainWindow.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="LoginDialog.cs" />
-    <Compile Include="gtk-gui\LoginDialog.cs" />
     <Compile Include="ThemesDialog.cs" />
-    <Compile Include="gtk-gui\ThemesDialog.cs" />
-    <Compile Include="NicorepoMainWidget.cs" />
-    <Compile Include="gtk-gui\NicorepoMainWidget.cs" />
+    <Compile Include="Widget\NicorepoWidget.cs" />
+    <Compile Include="gtk-gui\NicoMonoViewer.NicorepoWidgetItemCommunityLiveBroadcast.cs" />
+    <Compile Include="gtk-gui\NicoMonoViewer.NicorepoWidgetItemUnknow.cs" />
+    <Compile Include="Widget\NicorepoWidgetItem\NicorepoWidgetItemCommunityLiveBroadcast.cs" />
+    <Compile Include="Widget\NicorepoWidgetItem\NicorepoWidgetItemUnknow.cs" />
+    <Compile Include="Widget\INicorepoWidgetItem.cs" />
+    <Compile Include="gtk-gui\NicoMonoViewer.NicorepoWidget.cs" />
+    <Compile Include="gtk-gui\NicoMonoViewer.MainWindow.cs" />
+    <Compile Include="gtk-gui\NicoMonoViewer.ThemesDialog.cs" />
+    <Compile Include="gtk-gui\NicoMonoViewer.LoginDialog.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -90,6 +96,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="NicorepoItem\sample.html" />
+    <None Include="Widget\NicorepoWidgetItem\sample.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Widget\" />
   </ItemGroup>
 </Project>

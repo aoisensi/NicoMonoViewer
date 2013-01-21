@@ -13,8 +13,7 @@ namespace NicoMonoLibrary
 	{
 		static Encoding encoder = Encoding.GetEncoding("UTF-8");
 		NicoUser _user;
-		public List<string> htmls = new List<string>();
-		public List<INicorepoItem> items = new List<INicorepoItem>();
+		List<INicorepoItem> items = new List<INicorepoItem>();
 		string nexturl = "http://www.nicovideo.jp/my/top/all?innerPage=1&mode=next_page";
 		public Nicorepo (NicoUser user)
 		{
@@ -22,6 +21,7 @@ namespace NicoMonoLibrary
 		}
 		public void GetNextPage ()
 		{
+			items.Clear();
 			HttpWebRequest req = (HttpWebRequest)WebRequest.Create (nexturl);
 			req.CookieContainer = _user.cc;
 			
@@ -32,7 +32,6 @@ namespace NicoMonoLibrary
 			string html = sr.ReadToEnd ();
 			sr.Close ();
 			resStream.Close ();
-			htmls.Add (html);
 			HtmlParser(html);
 		}
 
@@ -48,6 +47,12 @@ namespace NicoMonoLibrary
 				items.Add(NicorepoItem.CreateInstance(node));
 			}
 			nexturl = "http://www.nicovideo.jp" + nicorepoPage.SelectSingleNode("div[@class='next-page']/a[@class='next-page-link']/@href").InnerText;
+		}
+
+		public List<INicorepoItem> Items {
+			get {
+				return items;
+			}
 		}
 	}
 }

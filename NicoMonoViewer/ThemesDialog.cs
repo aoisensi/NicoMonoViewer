@@ -1,26 +1,27 @@
 using System;
 using System.IO;
 
-
-public partial class ThemesDialog : Gtk.Dialog
+namespace NicoMonoViewer
 {
-	String themesDir;
-	public ThemesDialog ()
+	public partial class ThemesDialog : Gtk.Dialog
 	{
-		this.Build ();
-		//get theme list
-		comboboxTheme.AppendText("デフォルト");
-		themesDir = Gtk.Rc.ThemeDir;
-		foreach (string themeDir in Directory.GetDirectories(themesDir,"*",SearchOption.TopDirectoryOnly))
+		String themesDir;
+		public ThemesDialog ()
 		{
-			comboboxTheme.AppendText(System.IO.Path.GetFileName(themeDir));
+			this.Build ();
+			//get theme list
+			comboboxTheme.AppendText("デフォルト");
+			themesDir = Gtk.Rc.ThemeDir;
+			foreach (string themeDir in Directory.GetDirectories(themesDir,"*",SearchOption.TopDirectoryOnly))
+			{
+				comboboxTheme.AppendText(System.IO.Path.GetFileName(themeDir));
+			}
+			comboboxTheme.Active = 0;
 		}
-		comboboxTheme.Active = 0;
-	}
-	public string selectedThemePath {
-		get {
-			return System.IO.Path.Combine(themesDir, comboboxTheme.ActiveText);
+		public string selectedThemePath {
+			get {
+				return System.IO.Path.Combine(themesDir, comboboxTheme.ActiveText);
+			}
 		}
 	}
 }
-
