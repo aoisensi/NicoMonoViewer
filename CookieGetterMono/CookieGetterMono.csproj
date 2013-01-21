@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F8907DF2-A763-413F-82DD-C62A3C027A92}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CookieGetterMono</RootNamespace>
+    <AssemblyName>CookieGetterMono</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Mono.Data.Sqlite" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="BrowserType.cs" />
+    <Compile Include="CookieGetter.cs" />
+    <Compile Include="CookieStatus.cs" />
+    <Compile Include="Exceptions.cs" />
+    <Compile Include="IBrowserManager.cs" />
+    <Compile Include="ICookieGetter.cs" />
+    <Compile Include="IECookieGetter.cs" />
+    <Compile Include="SqlCookieGetter.cs" />
+    <Compile Include="Utility.cs" />
+    <Compile Include="WebkitCookieGetter.cs" />
+    <Compile Include="BrowserManager\ChromiumBrowserManager.cs" />
+    <Compile Include="BrowserManager\GoogleChrome3BrowserManager.cs" />
+    <Compile Include="CookieGetter\GoogleChrome3CookieGetter.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="BrowserManager\" />
+    <Folder Include="CookieGetter\" />
+  </ItemGroup>
+</Project>
