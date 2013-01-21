@@ -7,10 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NicoMonoLibrary", "NicoMono
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookieGetterMono", "CookieGetterMono\CookieGetterMono.csproj", "{F8907DF2-A763-413F-82DD-C62A3C027A92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CGMTest", "CGMTest\CGMTest.csproj", "{7C9C1208-FD42-4FE1-AA59-A764E8BC1930}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormTest", "FormTest\FormTest.csproj", "{DA3722D5-84E0-47CE-A157-EC9760657A0A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -21,18 +17,10 @@ Global
 		{7493E9EF-3A66-4FAC-B9CD-E726D56492F2}.Debug|x86.Build.0 = Debug|x86
 		{7493E9EF-3A66-4FAC-B9CD-E726D56492F2}.Release|x86.ActiveCfg = Release|x86
 		{7493E9EF-3A66-4FAC-B9CD-E726D56492F2}.Release|x86.Build.0 = Release|x86
-		{7C9C1208-FD42-4FE1-AA59-A764E8BC1930}.Debug|x86.ActiveCfg = Debug|x86
-		{7C9C1208-FD42-4FE1-AA59-A764E8BC1930}.Debug|x86.Build.0 = Debug|x86
-		{7C9C1208-FD42-4FE1-AA59-A764E8BC1930}.Release|x86.ActiveCfg = Release|x86
-		{7C9C1208-FD42-4FE1-AA59-A764E8BC1930}.Release|x86.Build.0 = Release|x86
 		{97E989F3-89B1-4A36-8A9A-21470C4207C0}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{97E989F3-89B1-4A36-8A9A-21470C4207C0}.Debug|x86.Build.0 = Debug|Any CPU
 		{97E989F3-89B1-4A36-8A9A-21470C4207C0}.Release|x86.ActiveCfg = Release|Any CPU
 		{97E989F3-89B1-4A36-8A9A-21470C4207C0}.Release|x86.Build.0 = Release|Any CPU
-		{DA3722D5-84E0-47CE-A157-EC9760657A0A}.Debug|x86.ActiveCfg = Debug|x86
-		{DA3722D5-84E0-47CE-A157-EC9760657A0A}.Debug|x86.Build.0 = Debug|x86
-		{DA3722D5-84E0-47CE-A157-EC9760657A0A}.Release|x86.ActiveCfg = Release|x86
-		{DA3722D5-84E0-47CE-A157-EC9760657A0A}.Release|x86.Build.0 = Release|x86
 		{F8907DF2-A763-413F-82DD-C62A3C027A92}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{F8907DF2-A763-413F-82DD-C62A3C027A92}.Debug|x86.Build.0 = Debug|Any CPU
 		{F8907DF2-A763-413F-82DD-C62A3C027A92}.Release|x86.ActiveCfg = Release|Any CPU

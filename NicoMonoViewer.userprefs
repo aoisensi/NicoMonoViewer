@@ -1,14 +1,18 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FormTest/Main.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="NicoMonoViewer/MainWindow.cs">
     <Files>
-      <File FileName="NicoMonoViewer/Widget/NicorepoWidget.cs" Line="51" Column="6" />
-      <File FileName="NicoMonoViewer/Widget/NicorepoWidgetItem/NicorepoWidgetItemUnknow.cs" Line="7" Column="30" />
-      <File FileName="NicoMonoViewer/MainWindow.cs" Line="15" Column="7" />
-      <File FileName="NicoMonoViewer/gtk-gui/NicoMonoViewer.MainWindow.cs" Line="65" Column="64" />
-      <File FileName="FormTest/Main.cs" Line="1" Column="1" />
+      <File FileName="NicoMonoViewer/MainWindow.cs" Line="15" Column="13" />
     </Files>
     <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="FormTest" expanded="True" />
+          <Node name="NicoMonoViewer" expanded="True">
+            <Node name="MainWindow.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
       <Pad Id="ClassPad">
         <State expanded="True" selected="True" />
       </Pad>
