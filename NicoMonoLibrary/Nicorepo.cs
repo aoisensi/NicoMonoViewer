@@ -5,7 +5,6 @@ using System.Text;
 using System.Collections.Generic;
 using System.Xml;
 using System.Xml.XPath;
-using HtmlAgilityPack;
 
 namespace NicoMonoLibrary
 {
@@ -38,12 +37,12 @@ namespace NicoMonoLibrary
 		public void HtmlParser (string html)
 		{
 
-			HtmlDocument doc = new HtmlDocument ();
+			XmlDocument doc = new XmlDocument ();
 
-			doc.LoadHtml (html);
-			HtmlNode nicorepoPage = doc.DocumentNode.SelectSingleNode("/div[@class='nicorepo']/div[@class='nicorepo-page']");
-			HtmlNodeCollection nodes = nicorepoPage.SelectNodes ("div[@class='timeline']/div");
-			foreach (HtmlNode node in nodes) {
+			doc.LoadXml (html);
+			XmlNode nicorepoPage = doc.DocumentElement.SelectSingleNode("/div[@class='nicorepo']/div[@class='nicorepo-page']");
+			XmlNodeList nodes = nicorepoPage.SelectNodes ("div[@class='timeline']/div");
+			foreach (XmlNode node in nodes) {
 				items.Add(NicorepoItem.CreateInstance(node));
 			}
 			nexturl = "http://www.nicovideo.jp" + nicorepoPage.SelectSingleNode("div[@class='next-page']/a[@class='next-page-link']/@href").InnerText;

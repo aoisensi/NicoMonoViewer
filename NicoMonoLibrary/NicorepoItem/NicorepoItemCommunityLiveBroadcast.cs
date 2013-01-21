@@ -1,6 +1,6 @@
 using System;
-using HtmlAgilityPack;
-
+using System.Xml;
+using System.Xml.XPath;
 namespace NicoMonoLibrary
 {
 	public class NicorepoItemCommunityLiveBroadcast : INicorepoItem
@@ -15,7 +15,7 @@ namespace NicoMonoLibrary
 		string broadcastURL;
 		string broadcastTitle;
 
-		public void Parser (HtmlNode node)
+		public void Parser (XmlNode node)
 		{
 			communityThumbnailURL = node.SelectSingleNode("div[@class='log-author ']/a/img[@class='nicorepo-lazyimage']").Attributes["data-src"].Value;
 			communityURL = node.SelectSingleNode("div[@class='log-content']/div[@class='log-body']/a[@class='author-community']").Attributes["href"].Value;

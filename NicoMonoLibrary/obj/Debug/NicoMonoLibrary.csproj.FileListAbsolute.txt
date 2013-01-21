@@ -1,0 +1,5 @@
+C:\Users\aoisensi\Documents\GitHub\NicoMonoViewer\NicoMonoLibrary\bin\Debug\NicoMonoLibrary.dll
+C:\Users\aoisensi\Documents\GitHub\NicoMonoViewer\NicoMonoLibrary\bin\Debug\NicoMonoLibrary.pdb
+C:\Users\aoisensi\Documents\GitHub\NicoMonoViewer\NicoMonoLibrary\obj\Debug\NicoMonoLibrary.csprojResolveAssemblyReference.cache
+C:\Users\aoisensi\Documents\GitHub\NicoMonoViewer\NicoMonoLibrary\obj\Debug\NicoMonoLibrary.dll
+C:\Users\aoisensi\Documents\GitHub\NicoMonoViewer\NicoMonoLibrary\obj\Debug\NicoMonoLibrary.pdb

@@ -7,6 +7,7 @@ namespace NicoMonoViewer
 		private global::Gtk.ScrolledWindow scrolledwindow;
 		private global::Gtk.VBox vbox;
 		private global::Gtk.VBox vboxMain;
+		private global::Gtk.Label label1;
 		private global::Gtk.Image imageLoading;
 		
 		protected virtual void Build ()
@@ -32,18 +33,29 @@ namespace NicoMonoViewer
 			this.vboxMain = new global::Gtk.VBox ();
 			this.vboxMain.Name = "vboxMain";
 			this.vboxMain.Spacing = 6;
-			this.vbox.Add (this.vboxMain);
-			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox [this.vboxMain]));
+			// Container child vboxMain.Gtk.Box+BoxChild
+			this.label1 = new global::Gtk.Label ();
+			this.label1.Name = "label1";
+			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString ("ろーでぃんぐ");
+			this.vboxMain.Add (this.label1);
+			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vboxMain [this.label1]));
 			w2.Position = 0;
+			w2.Expand = false;
+			w2.Fill = false;
+			this.vbox.Add (this.vboxMain);
+			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox [this.vboxMain]));
+			w3.Position = 1;
+			w3.Expand = false;
+			w3.Fill = false;
 			// Container child vbox.Gtk.Box+BoxChild
 			this.imageLoading = new global::Gtk.Image ();
 			this.imageLoading.Name = "imageLoading";
 			this.imageLoading.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("NicoMonoViewer.loading.gif");
 			this.vbox.Add (this.imageLoading);
-			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox [this.imageLoading]));
-			w3.Position = 1;
-			w3.Expand = false;
-			w3.Fill = false;
+			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox [this.imageLoading]));
+			w4.Position = 2;
+			w4.Expand = false;
+			w4.Fill = false;
 			w1.Add (this.vbox);
 			this.scrolledwindow.Add (w1);
 			this.Add (this.scrolledwindow);

@@ -13,8 +13,6 @@ namespace NicoMonoViewer
 		private global::Gtk.VBox vbox;
 		private global::Gtk.MenuBar menubar;
 		private global::Gtk.Notebook notebook;
-		private global::NicoMonoViewer.NicorepoWidget nicorepowidget1;
-		private global::Gtk.Label label1;
 		
 		protected virtual void Build ()
 		{
@@ -49,7 +47,7 @@ namespace NicoMonoViewer
 			this.vbox.Name = "vbox";
 			this.vbox.Spacing = 6;
 			// Container child vbox.Gtk.Box+BoxChild
-			this.UIManager.AddUiFromString ("<ui><menubar name='menubar'><menu name='FAction' action='FAction'><menuitem name='quitAction' action='quitAction'/></menu><menu name='SAction' action='SAction'><menuitem name='loginAction' action='loginAction'/><menuitem name='themeAction' action='themeAction'/></menu></menubar></ui>");
+			this.UIManager.AddUiFromString (@"<ui><menubar name='menubar'><menu name='FAction' action='FAction'><menuitem name='quitAction' action='quitAction'/></menu><menu name='SAction' action='SAction'><menuitem name='loginAction' action='loginAction'/><menuitem name='themeAction' action='themeAction'/></menu></menubar></ui>");
 			this.menubar = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar")));
 			this.menubar.Name = "menubar";
 			this.vbox.Add (this.menubar);
@@ -61,21 +59,12 @@ namespace NicoMonoViewer
 			this.notebook = new global::Gtk.Notebook ();
 			this.notebook.CanFocus = true;
 			this.notebook.Name = "notebook";
-			this.notebook.CurrentPage = 0;
-			// Container child notebook.Gtk.Notebook+NotebookChild
-			this.nicorepowidget1 = new global::NicoMonoViewer.NicorepoWidget ();
-			this.nicorepowidget1.Events = ((global::Gdk.EventMask)(256));
-			this.nicorepowidget1.Name = "nicorepowidget1";
-			this.notebook.Add (this.nicorepowidget1);
-			// Notebook tab
-			this.label1 = new global::Gtk.Label ();
-			this.label1.Name = "label1";
-			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString ("ニコレポ");
-			this.notebook.SetTabLabel (this.nicorepowidget1, this.label1);
-			this.label1.ShowAll ();
+			this.notebook.CurrentPage = -1;
 			this.vbox.Add (this.notebook);
-			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox [this.notebook]));
-			w4.Position = 1;
+			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox [this.notebook]));
+			w3.Position = 1;
+			w3.Expand = false;
+			w3.Fill = false;
 			this.Add (this.vbox);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();

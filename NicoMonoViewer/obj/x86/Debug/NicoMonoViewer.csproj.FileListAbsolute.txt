@@ -3,3 +3,6 @@ C:\Users\aoisensi\Dropbox\Mono\NicoMonoViewer\NicoMonoViewer\bin\Debug\NicoMonoV
 C:\Users\aoisensi\Dropbox\Mono\NicoMonoViewer\NicoMonoViewer\obj\x86\Debug\NicoMonoViewer.csprojResolveAssemblyReference.cache
 C:\Users\aoisensi\Dropbox\Mono\NicoMonoViewer\NicoMonoViewer\obj\x86\Debug\NicoMonoViewer.exe
 C:\Users\aoisensi\Dropbox\Mono\NicoMonoViewer\NicoMonoViewer\obj\x86\Debug\NicoMonoViewer.pdb
+C:\Users\aoisensi\Documents\GitHub\NicoMonoViewer\NicoMonoViewer\obj\x86\Debug\NicoMonoViewer.exe
+C:\Users\aoisensi\Documents\GitHub\NicoMonoViewer\NicoMonoViewer\obj\x86\Debug\NicoMonoViewer.pdb
+C:\Users\aoisensi\Documents\GitHub\NicoMonoViewer\NicoMonoViewer\obj\x86\Debug\NicoMonoViewer.csprojResolveAssemblyReference.cache

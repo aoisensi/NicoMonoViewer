@@ -10,7 +10,7 @@ namespace CookieGetterMono
 		string GetCookiePath ()
 		{
 			switch (Environment.OSVersion.Platform) {
-			case PlatformID.Win32Windows:
+			case PlatformID.Win32NT:
 				return "%LOCALAPPDATA%\\Chromium\\User Data\\Default\\Cookies";
 			case PlatformID.Unix:
 				return "%APPDATA%/chromium/Default/Cookies";

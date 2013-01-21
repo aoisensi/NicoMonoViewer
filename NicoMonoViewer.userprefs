@@ -1,8 +1,9 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="NicoMonoViewer/MainWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CookieGetterMono\SqlCookieGetter.cs">
     <Files>
-      <File FileName="NicoMonoViewer/MainWindow.cs" Line="10" Column="23" />
+      <File FileName="NicoMonoViewer\MainWindow.cs" Line="14" Column="5" />
+      <File FileName="CookieGetterMono\SqlCookieGetter.cs" Line="44" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,6 +18,6 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
-    <Watch file="NicoMonoLibrary/Nicorepo.cs" line="45" offsetX="1013" offsetY="660" expression="doc.DocumentNode.ChildNodes" liveUpdate="False" />
+    <Watch file="NicoMonoLibrary\Nicorepo.cs" line="45" offsetX="1013" offsetY="660" expression="doc.DocumentNode.ChildNodes" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
 </Properties>

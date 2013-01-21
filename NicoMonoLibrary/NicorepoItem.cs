@@ -1,5 +1,6 @@
 using System;
-using HtmlAgilityPack;
+using System.Xml;
+using System.Xml.XPath;
 
 namespace NicoMonoLibrary
 {
@@ -16,7 +17,7 @@ namespace NicoMonoLibrary
 			_nicorepoItemUnknow = new NicorepoItemUnknow();
 		}
 
-		public static INicorepoItem CreateInstance (HtmlNode node)
+		public static INicorepoItem CreateInstance (XmlNode node)
 		{
 			string[] className = node.Attributes["class"].Value.Split(' ');
 			string type = className[className.Length - 1];
