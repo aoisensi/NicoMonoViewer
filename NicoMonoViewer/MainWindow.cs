@@ -1,59 +1,35 @@
 using System;
 using Gtk;
+using NicoMonoLibrary;
+using CookieGetterMono;
+using System.Net;
 
 namespace NicoMonoViewer
 {
 	public partial class MainWindow: Gtk.Window
 	{	
-		public NicoMonoLibrary.NicoUser user;
-
+		NicoUser _user;
 		public MainWindow (): base (Gtk.WindowType.Toplevel)
 		{
-			if (user == null) {
-				OnLoginActionActivated(null, null);
-			}
+			ICookieGetter cg = CookieGetter.CreateInstance(BrowserType.Chromium);
+			Cookie cookie = cg.GetCookie(new Uri("http://live.nicovideo.jp/"),"user_session");
+			_user = new NicoUser(cookie);
 			Build ();
 		}
-		
+
 		protected void OnDeleteEvent (object sender, DeleteEventArgs a)
 		{
 			Application.Quit ();
 			a.RetVal = true;
 		}
-
-		protected void OnQuitActionActivated (object sender, EventArgs e)
+		protected void OnCloseActionActivated (object sender, EventArgs e)
 		{
-			Application.Quit();
+			Application.Quit ();
 		}
 
-		protected void OnLoginActionActivated (object sender, EventArgs e)
-		{
-			LoginDialog dialog = new LoginDialog();
-			dialog.Response += new ResponseHandler(GetLoginDialogResponse);
-			dialog.Run();
-			dialog.Destroy();
-		}
-
-		protected void GetLoginDialogResponse (object sender, ResponseArgs args)
-		{
-			if (args.ResponseId == ResponseType.Ok) {
-				LoginDialog dialog = (LoginDialog)sender;
-				user = dialog.GetUserData();
-			}
-		}
-		protected void OnThemeActionActivated (object sender, EventArgs e)
-		{
-			ThemesDialog dialog = new ThemesDialog();
-			dialog.Response += new ResponseHandler(GetThemeDialogResponse);
-			dialog.Run();
-			dialog.Destroy();
-		}
-
-
-		void GetThemeDialogResponse (object sender, ResponseArgs args)
-		{
-			if (args.ResponseId == ResponseType.Ok) {
-				//ThemesDialog dialog = (ThemesDialog)sender;
+		public NicoUser user {
+			get {
+				return _user;
 			}
 		}
 	}

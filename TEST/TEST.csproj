@@ -5,10 +5,10 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{838C2255-D3D1-40EE-8160-602E81714C6E}</ProjectGuid>
+    <ProjectGuid>{88097499-A061-4B8E-AB19-5DFE638D59D8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>NicoMonoViewer</RootNamespace>
-    <AssemblyName>NicoMonoViewer</AssemblyName>
+    <RootNamespace>TEST</RootNamespace>
+    <AssemblyName>TEST</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>True</DebugSymbols>
@@ -57,53 +57,20 @@
       <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="Mono.Posix" />
-    <Reference Include="System.Net" />
-    <Reference Include="libstetic">
-      <HintPath>..\..\..\..\..\usr\lib\monodevelop\AddIns\MonoDevelop.GtkCore\libstetic.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
       <LogicalName>gui.stetic</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\..\..\Pictures\noimage.jpg" />
-    <EmbeddedResource Include="..\..\..\Pictures\nicoru_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="gtk-gui\generated.cs" />
     <Compile Include="MainWindow.cs" />
+    <Compile Include="gtk-gui\MainWindow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="gtk-gui\NicoMonoViewer.MainWindow.cs" />
-    <Compile Include="gtk-gui\NicoMonoViewer.NicorepoWidget.cs" />
-    <Compile Include="Widget\NicorepoWidget.cs" />
-    <Compile Include="Widget\NicorepoWidgetItem\INicorepoWidgetItem.cs" />
-    <Compile Include="Widget\NicorepoWidgetItem\NicorepoWidgetItemUnknow.cs" />
-    <Compile Include="gtk-gui\NicoMonoViewer.NicorepoWidgetItemUnknow.cs" />
-    <Compile Include="Widget\NicorepoWidgetItem\NicorepoWidgetItemCommunityLiveBroadcast.cs" />
-    <Compile Include="gtk-gui\NicoMonoViewer.NicorepoWidgetItemCommunityLiveBroadcast.cs" />
-    <Compile Include="Widget\NicorepoWidgetItem\Sub\NicorepoWidgetItemSubLongago.cs" />
-    <Compile Include="gtk-gui\NicoMonoViewer.NicorepoWidgetItemSubLongago.cs" />
-    <Compile Include="Widget\NicorepoWidgetItem\Sub\NicorepoWidgetItemSubNicoru.cs" />
-    <Compile Include="gtk-gui\NicoMonoViewer.NicorepoWidgetItemSubNicoru.cs" />
+    <Compile Include="MyWidget.cs" />
+    <Compile Include="gtk-gui\TEST.MyWidget.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <ProjectReference Include="..\NicoMonoLibrary\NicoMonoLibrary.csproj">
-      <Project>{97E989F3-89B1-4A36-8A9A-21470C4207C0}</Project>
-      <Name>NicoMonoLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CookieGetterMono\CookieGetterMono.csproj">
-      <Project>{F8907DF2-A763-413F-82DD-C62A3C027A92}</Project>
-      <Name>CookieGetterMono</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Widget\NicorepoWidgetItem\sample.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Widget\" />
-    <Folder Include="CustomWidget\" />
-    <Folder Include="Widget\NicorepoWidgetItem\Sub\" />
-  </ItemGroup>
 </Project>

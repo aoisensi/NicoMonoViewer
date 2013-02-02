@@ -1,34 +1,25 @@
 using System;
-using System.Xml;
-using System.Xml.XPath;
+using HtmlAgilityPack;
 
 namespace NicoMonoLibrary
 {
 	public class NicorepoItem
 	{
-		static INicorepoItem[] _nicorepoItem;
-		static INicorepoItem _nicorepoItemUnknow;
-
-		static NicorepoItem ()
+		public static INicorepoItem CreateInstance (HtmlNode node)
 		{
-			_nicorepoItem = new INicorepoItem[]{
-				new NicorepoItemCommunityLiveBroadcast()
-			};
-			_nicorepoItemUnknow = new NicorepoItemUnknow();
-		}
-
-		public static INicorepoItem CreateInstance (XmlNode node)
-		{
-			string[] className = node.Attributes["class"].Value.Split(' ');
-			string type = className[className.Length - 1];
-			foreach (INicorepoItem item in _nicorepoItem) {
-				if(type == item.ClassName){
-					item.Parser(node);
-					return item;
-				}
+			string[] className = node.Attributes ["class"].Value.Split (' ');
+			string type = className [className.Length - 1];
+			INicorepoItem item;
+			switch (type) {
+			case "log-community-live-broadcast":
+				item = new NicorepoItemCommunityLiveBroadcast();
+				break;
+			default:
+				item = new NicorepoItemUnknow();
+				break;
 			}
-			_nicorepoItemUnknow.Parser(node);
-			return _nicorepoItemUnknow;
+			item.Parser(node);
+			return item;
 		}
 	}
 }

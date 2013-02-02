@@ -10,12 +10,11 @@ namespace NicoMonoViewer
 		{
 			this.Build ();
 		}
-
+		
 		public void Write(INicorepoItem iitem)
 		{
 			NicorepoItemUnknow item = (NicorepoItemUnknow)iitem;
-			textview1.Buffer.Text = item.Html;
+			textview.Buffer.Text = item.Html;
 		}
 	}
 }
-

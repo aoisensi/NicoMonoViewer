@@ -1,6 +1,5 @@
 using System;
-using System.Xml;
-using System.Xml.XPath;
+using HtmlAgilityPack;
 
 namespace NicoMonoLibrary
 {
@@ -11,7 +10,7 @@ namespace NicoMonoLibrary
 			get;
 		}
 
-		void Parser(XmlNode node);
+		void Parser(HtmlNode node);
 	}
 }
 

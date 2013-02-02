@@ -1,12 +1,12 @@
 using System;
-using System.Xml;
-using System.Xml.XPath;
+using HtmlAgilityPack;
+
 namespace NicoMonoLibrary
 {
 	public class NicorepoItemCommunityLiveBroadcast : INicorepoItem
 	{
 		public string ClassName { get { return "log-community-live-broadcast";	} }
-
+		
 		string communityURL;
 		string communityName;
 		string communityThumbnailURL;
@@ -14,8 +14,10 @@ namespace NicoMonoLibrary
 		string userName;
 		string broadcastURL;
 		string broadcastTitle;
+		NicorepoItemSubLongago longago;
+		NicorepoItemSubNicoru nicoru;
 
-		public void Parser (XmlNode node)
+		public void Parser (HtmlNode node)
 		{
 			communityThumbnailURL = node.SelectSingleNode("div[@class='log-author ']/a/img[@class='nicorepo-lazyimage']").Attributes["data-src"].Value;
 			communityURL = node.SelectSingleNode("div[@class='log-content']/div[@class='log-body']/a[@class='author-community']").Attributes["href"].Value;
@@ -26,6 +28,8 @@ namespace NicoMonoLibrary
 			//communityThumbnailURL = node.SelectSingleNode("div[@class='log-content']/div[@class='log-details log-target log-target-live-program']/div[@class='log-target-thumbnail']/a/img[@class='live_program']").Attributes["src"].Value;
 			broadcastURL = node.SelectSingleNode("div[@class='log-content']/div[@class='log-details log-target log-target-live-program']/div[@class='log-target-info']/a").Attributes["href"].Value;
 			broadcastTitle = node.SelectSingleNode("div[@class='log-content']/div[@class='log-details log-target log-target-live-program']/div[@class='log-target-info']/a").InnerText;
+			longago = new NicorepoItemSubLongago(node);
+			nicoru = new NicorepoItemSubNicoru(node);
 		}
 
 		public string CommunityURL {
@@ -67,6 +71,18 @@ namespace NicoMonoLibrary
 		public string BroadcastTitle {
 			get {
 				return broadcastTitle;
+			}
+		}
+
+		public DateTime Longago{
+			get {
+				return longago.Longago();
+			}
+		}
+
+		public Nicoru Nicoru {
+			get {
+				return new Nicoru(String.Format("9:{0}", nicoru.Nicoru));
 			}
 		}
 	}

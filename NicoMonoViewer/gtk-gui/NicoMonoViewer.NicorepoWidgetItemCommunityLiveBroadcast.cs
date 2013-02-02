@@ -4,18 +4,27 @@ namespace NicoMonoViewer
 {
 	public partial class NicorepoWidgetItemCommunityLiveBroadcast
 	{
-		private global::Gtk.Frame frame1;
+		private global::Gtk.Frame frame;
 		private global::Gtk.Alignment GtkAlignment;
-		private global::Gtk.HBox hbox1;
-		private global::Gtk.DrawingArea drawingareaIcon;
-		private global::Gtk.Table table1;
-		private global::Gtk.Label label2;
-		private global::Gtk.Label label3;
-		private global::Gtk.Label label4;
+		private global::Gtk.VBox vbox;
+		private global::Gtk.HBox hbox;
+		private global::Gtk.VBox vboxIcon;
+		private global::Gtk.Image imageIcon;
+		private global::Gtk.VBox vboxMain;
+		private global::Gtk.HBox hboxMain;
+		private global::Gtk.Button buttonCommunity;
 		private global::Gtk.Label labelCommunity;
-		private global::Gtk.Label labelTitle;
+		private global::Gtk.Label labelDe;
+		private global::Gtk.Button buttonUser;
 		private global::Gtk.Label labelUser;
-		private global::Gtk.Label label1;
+		private global::Gtk.Label labelSan;
+		private global::Gtk.HBox hboxSub;
+		private global::Gtk.Button buttonTitle;
+		private global::Gtk.Label labelTitle;
+		private global::Gtk.HBox hboxOther;
+		private global::NicoMonoViewer.NicorepoWidgetItemSubLongago nicorepowidgetitemsublongago;
+		private global::NicoMonoViewer.NicorepoWidgetItemSubNicoru nicorepowidgetitemsubnicoru;
+		private global::Gtk.Label GtkLabel;
 		
 		protected virtual void Build ()
 		{
@@ -24,110 +33,177 @@ namespace NicoMonoViewer
 			global::Stetic.BinContainer.Attach (this);
 			this.Name = "NicoMonoViewer.NicorepoWidgetItemCommunityLiveBroadcast";
 			// Container child NicoMonoViewer.NicorepoWidgetItemCommunityLiveBroadcast.Gtk.Container+ContainerChild
-			this.frame1 = new global::Gtk.Frame ();
-			this.frame1.Name = "frame1";
-			this.frame1.ShadowType = ((global::Gtk.ShadowType)(2));
-			// Container child frame1.Gtk.Container+ContainerChild
+			this.frame = new global::Gtk.Frame ();
+			this.frame.Name = "frame";
+			this.frame.ShadowType = ((global::Gtk.ShadowType)(1));
+			// Container child frame.Gtk.Container+ContainerChild
 			this.GtkAlignment = new global::Gtk.Alignment (0F, 0F, 1F, 1F);
 			this.GtkAlignment.Name = "GtkAlignment";
 			this.GtkAlignment.LeftPadding = ((uint)(12));
 			// Container child GtkAlignment.Gtk.Container+ContainerChild
-			this.hbox1 = new global::Gtk.HBox ();
-			this.hbox1.Name = "hbox1";
-			this.hbox1.Spacing = 6;
-			// Container child hbox1.Gtk.Box+BoxChild
-			this.drawingareaIcon = new global::Gtk.DrawingArea ();
-			this.drawingareaIcon.WidthRequest = 64;
-			this.drawingareaIcon.HeightRequest = 64;
-			this.drawingareaIcon.Name = "drawingareaIcon";
-			this.hbox1.Add (this.drawingareaIcon);
-			global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.drawingareaIcon]));
+			this.vbox = new global::Gtk.VBox ();
+			this.vbox.Name = "vbox";
+			this.vbox.Spacing = 6;
+			// Container child vbox.Gtk.Box+BoxChild
+			this.hbox = new global::Gtk.HBox ();
+			this.hbox.Name = "hbox";
+			this.hbox.Spacing = 6;
+			// Container child hbox.Gtk.Box+BoxChild
+			this.vboxIcon = new global::Gtk.VBox ();
+			this.vboxIcon.Name = "vboxIcon";
+			this.vboxIcon.Spacing = 6;
+			// Container child vboxIcon.Gtk.Box+BoxChild
+			this.imageIcon = new global::Gtk.Image ();
+			this.imageIcon.WidthRequest = 48;
+			this.imageIcon.HeightRequest = 48;
+			this.imageIcon.Name = "imageIcon";
+			this.imageIcon.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("NicoMonoViewer.noimage.jpg");
+			this.vboxIcon.Add (this.imageIcon);
+			global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vboxIcon [this.imageIcon]));
 			w1.Position = 0;
 			w1.Expand = false;
-			// Container child hbox1.Gtk.Box+BoxChild
-			this.table1 = new global::Gtk.Table (((uint)(3)), ((uint)(2)), false);
-			this.table1.Name = "table1";
-			this.table1.RowSpacing = ((uint)(6));
-			this.table1.ColumnSpacing = ((uint)(6));
-			// Container child table1.Gtk.Table+TableChild
-			this.label2 = new global::Gtk.Label ();
-			this.label2.Name = "label2";
-			this.label2.LabelProp = global::Mono.Unix.Catalog.GetString ("放送主");
-			this.table1.Add (this.label2);
-			global::Gtk.Table.TableChild w2 = ((global::Gtk.Table.TableChild)(this.table1 [this.label2]));
-			w2.XOptions = ((global::Gtk.AttachOptions)(4));
-			w2.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child table1.Gtk.Table+TableChild
-			this.label3 = new global::Gtk.Label ();
-			this.label3.Name = "label3";
-			this.label3.LabelProp = global::Mono.Unix.Catalog.GetString ("タイトル");
-			this.table1.Add (this.label3);
-			global::Gtk.Table.TableChild w3 = ((global::Gtk.Table.TableChild)(this.table1 [this.label3]));
-			w3.TopAttach = ((uint)(1));
-			w3.BottomAttach = ((uint)(2));
-			w3.XOptions = ((global::Gtk.AttachOptions)(4));
-			w3.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child table1.Gtk.Table+TableChild
-			this.label4 = new global::Gtk.Label ();
-			this.label4.Name = "label4";
-			this.label4.LabelProp = global::Mono.Unix.Catalog.GetString ("コミュニティ");
-			this.table1.Add (this.label4);
-			global::Gtk.Table.TableChild w4 = ((global::Gtk.Table.TableChild)(this.table1 [this.label4]));
-			w4.TopAttach = ((uint)(2));
-			w4.BottomAttach = ((uint)(3));
-			w4.XOptions = ((global::Gtk.AttachOptions)(4));
-			w4.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child table1.Gtk.Table+TableChild
+			w1.Fill = false;
+			this.hbox.Add (this.vboxIcon);
+			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.hbox [this.vboxIcon]));
+			w2.Position = 0;
+			w2.Expand = false;
+			w2.Fill = false;
+			// Container child hbox.Gtk.Box+BoxChild
+			this.vboxMain = new global::Gtk.VBox ();
+			this.vboxMain.Name = "vboxMain";
+			this.vboxMain.Spacing = 6;
+			// Container child vboxMain.Gtk.Box+BoxChild
+			this.hboxMain = new global::Gtk.HBox ();
+			this.hboxMain.Name = "hboxMain";
+			this.hboxMain.Spacing = 6;
+			// Container child hboxMain.Gtk.Box+BoxChild
+			this.buttonCommunity = new global::Gtk.Button ();
+			this.buttonCommunity.CanFocus = true;
+			this.buttonCommunity.Name = "buttonCommunity";
+			// Container child buttonCommunity.Gtk.Container+ContainerChild
 			this.labelCommunity = new global::Gtk.Label ();
 			this.labelCommunity.Name = "labelCommunity";
-			this.labelCommunity.LabelProp = global::Mono.Unix.Catalog.GetString ("label7");
-			this.table1.Add (this.labelCommunity);
-			global::Gtk.Table.TableChild w5 = ((global::Gtk.Table.TableChild)(this.table1 [this.labelCommunity]));
-			w5.TopAttach = ((uint)(2));
-			w5.BottomAttach = ((uint)(3));
-			w5.LeftAttach = ((uint)(1));
-			w5.RightAttach = ((uint)(2));
-			w5.XOptions = ((global::Gtk.AttachOptions)(4));
-			w5.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child table1.Gtk.Table+TableChild
-			this.labelTitle = new global::Gtk.Label ();
-			this.labelTitle.Name = "labelTitle";
-			this.labelTitle.LabelProp = global::Mono.Unix.Catalog.GetString ("label6");
-			this.table1.Add (this.labelTitle);
-			global::Gtk.Table.TableChild w6 = ((global::Gtk.Table.TableChild)(this.table1 [this.labelTitle]));
-			w6.TopAttach = ((uint)(1));
-			w6.BottomAttach = ((uint)(2));
-			w6.LeftAttach = ((uint)(1));
-			w6.RightAttach = ((uint)(2));
-			w6.XOptions = ((global::Gtk.AttachOptions)(4));
-			w6.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child table1.Gtk.Table+TableChild
+			this.labelCommunity.LabelProp = global::Mono.Unix.Catalog.GetString ("嘘ケーキ");
+			this.buttonCommunity.Add (this.labelCommunity);
+			this.buttonCommunity.Label = null;
+			this.hboxMain.Add (this.buttonCommunity);
+			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.hboxMain [this.buttonCommunity]));
+			w4.Position = 0;
+			w4.Expand = false;
+			w4.Fill = false;
+			// Container child hboxMain.Gtk.Box+BoxChild
+			this.labelDe = new global::Gtk.Label ();
+			this.labelDe.Name = "labelDe";
+			this.labelDe.LabelProp = global::Mono.Unix.Catalog.GetString ("で");
+			this.hboxMain.Add (this.labelDe);
+			global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hboxMain [this.labelDe]));
+			w5.Position = 1;
+			w5.Expand = false;
+			w5.Fill = false;
+			// Container child hboxMain.Gtk.Box+BoxChild
+			this.buttonUser = new global::Gtk.Button ();
+			this.buttonUser.CanFocus = true;
+			this.buttonUser.Name = "buttonUser";
+			// Container child buttonUser.Gtk.Container+ContainerChild
 			this.labelUser = new global::Gtk.Label ();
 			this.labelUser.Name = "labelUser";
-			this.labelUser.LabelProp = global::Mono.Unix.Catalog.GetString ("label5");
-			this.table1.Add (this.labelUser);
-			global::Gtk.Table.TableChild w7 = ((global::Gtk.Table.TableChild)(this.table1 [this.labelUser]));
-			w7.LeftAttach = ((uint)(1));
-			w7.RightAttach = ((uint)(2));
-			w7.XOptions = ((global::Gtk.AttachOptions)(4));
-			w7.YOptions = ((global::Gtk.AttachOptions)(4));
-			this.hbox1.Add (this.table1);
-			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.table1]));
-			w8.Position = 1;
+			this.labelUser.LabelProp = global::Mono.Unix.Catalog.GetString ("嘘ケーキ");
+			this.buttonUser.Add (this.labelUser);
+			this.buttonUser.Label = null;
+			this.hboxMain.Add (this.buttonUser);
+			global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.hboxMain [this.buttonUser]));
+			w7.Position = 2;
+			w7.Expand = false;
+			w7.Fill = false;
+			// Container child hboxMain.Gtk.Box+BoxChild
+			this.labelSan = new global::Gtk.Label ();
+			this.labelSan.Name = "labelSan";
+			this.labelSan.LabelProp = global::Mono.Unix.Catalog.GetString ("さんが 生放送を開始しました。");
+			this.hboxMain.Add (this.labelSan);
+			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.hboxMain [this.labelSan]));
+			w8.Position = 3;
 			w8.Expand = false;
 			w8.Fill = false;
-			this.GtkAlignment.Add (this.hbox1);
-			this.frame1.Add (this.GtkAlignment);
-			this.label1 = new global::Gtk.Label ();
-			this.label1.Name = "label1";
-			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>参加コミュニティ放送開始</b>");
-			this.label1.UseMarkup = true;
-			this.frame1.LabelWidget = this.label1;
-			this.Add (this.frame1);
+			this.vboxMain.Add (this.hboxMain);
+			global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.vboxMain [this.hboxMain]));
+			w9.Position = 0;
+			w9.Expand = false;
+			w9.Fill = false;
+			// Container child vboxMain.Gtk.Box+BoxChild
+			this.hboxSub = new global::Gtk.HBox ();
+			this.hboxSub.Name = "hboxSub";
+			this.hboxSub.Spacing = 6;
+			// Container child hboxSub.Gtk.Box+BoxChild
+			this.buttonTitle = new global::Gtk.Button ();
+			this.buttonTitle.CanFocus = true;
+			this.buttonTitle.Name = "buttonTitle";
+			// Container child buttonTitle.Gtk.Container+ContainerChild
+			this.labelTitle = new global::Gtk.Label ();
+			this.labelTitle.Name = "labelTitle";
+			this.labelTitle.LabelProp = global::Mono.Unix.Catalog.GetString ("嘘ケーキ");
+			this.buttonTitle.Add (this.labelTitle);
+			this.buttonTitle.Label = null;
+			this.hboxSub.Add (this.buttonTitle);
+			global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.hboxSub [this.buttonTitle]));
+			w11.Position = 0;
+			w11.Expand = false;
+			w11.Fill = false;
+			this.vboxMain.Add (this.hboxSub);
+			global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.vboxMain [this.hboxSub]));
+			w12.Position = 1;
+			w12.Expand = false;
+			w12.Fill = false;
+			this.hbox.Add (this.vboxMain);
+			global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.hbox [this.vboxMain]));
+			w13.Position = 1;
+			w13.Expand = false;
+			w13.Fill = false;
+			this.vbox.Add (this.hbox);
+			global::Gtk.Box.BoxChild w14 = ((global::Gtk.Box.BoxChild)(this.vbox [this.hbox]));
+			w14.Position = 0;
+			w14.Expand = false;
+			w14.Fill = false;
+			// Container child vbox.Gtk.Box+BoxChild
+			this.hboxOther = new global::Gtk.HBox ();
+			this.hboxOther.Name = "hboxOther";
+			this.hboxOther.Spacing = 6;
+			// Container child hboxOther.Gtk.Box+BoxChild
+			this.nicorepowidgetitemsublongago = new global::NicoMonoViewer.NicorepoWidgetItemSubLongago ();
+			this.nicorepowidgetitemsublongago.Events = ((global::Gdk.EventMask)(256));
+			this.nicorepowidgetitemsublongago.Name = "nicorepowidgetitemsublongago";
+			this.hboxOther.Add (this.nicorepowidgetitemsublongago);
+			global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.hboxOther [this.nicorepowidgetitemsublongago]));
+			w15.Position = 0;
+			w15.Expand = false;
+			w15.Fill = false;
+			// Container child hboxOther.Gtk.Box+BoxChild
+			this.nicorepowidgetitemsubnicoru = new global::NicoMonoViewer.NicorepoWidgetItemSubNicoru ();
+			this.nicorepowidgetitemsubnicoru.WidthRequest = 120;
+			this.nicorepowidgetitemsubnicoru.Events = ((global::Gdk.EventMask)(256));
+			this.nicorepowidgetitemsubnicoru.Name = "nicorepowidgetitemsubnicoru";
+			this.hboxOther.Add (this.nicorepowidgetitemsubnicoru);
+			global::Gtk.Box.BoxChild w16 = ((global::Gtk.Box.BoxChild)(this.hboxOther [this.nicorepowidgetitemsubnicoru]));
+			w16.Position = 1;
+			w16.Expand = false;
+			w16.Fill = false;
+			this.vbox.Add (this.hboxOther);
+			global::Gtk.Box.BoxChild w17 = ((global::Gtk.Box.BoxChild)(this.vbox [this.hboxOther]));
+			w17.PackType = ((global::Gtk.PackType)(1));
+			w17.Position = 1;
+			w17.Expand = false;
+			w17.Fill = false;
+			this.GtkAlignment.Add (this.vbox);
+			this.frame.Add (this.GtkAlignment);
+			this.GtkLabel = new global::Gtk.Label ();
+			this.GtkLabel.Name = "GtkLabel";
+			this.GtkLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>コミュニティ放送開始通知</b>");
+			this.GtkLabel.UseMarkup = true;
+			this.frame.LabelWidget = this.GtkLabel;
+			this.Add (this.frame);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.Show ();
+			this.Hide ();
 		}
 	}
 }

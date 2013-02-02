@@ -1,6 +1,6 @@
 using System;
-using System.Threading;
 using NicoMonoLibrary;
+using System.ComponentModel;
 
 namespace NicoMonoViewer
 {
@@ -8,50 +8,62 @@ namespace NicoMonoViewer
 	public partial class NicorepoWidget : Gtk.Bin
 	{
 		NicoMonoLibrary.Nicorepo nicorepo;
+		BackgroundWorker bw;
 		public NicorepoWidget ()
 		{
 			this.Build ();
 		}
+
 		protected void OnShown (object sender, EventArgs a)
 		{
 			MainWindow window = (MainWindow)(Gtk.Window)Toplevel;
 			NicoMonoLibrary.NicoUser user = window.user;
 			nicorepo = new NicoMonoLibrary.Nicorepo(user);
-			BeginAsyncWork(Callback);
+			bw = new BackgroundWorker();
+			bw.DoWork += HandleDoWork;
+			bw.RunWorkerCompleted += HandleRunWorkerCompleted;
+			bw.RunWorkerAsync();
 		}
 
-		void BeginAsyncWork (AsyncCallback callback)
-		{
-			Action async = AsyncWork;
-			async.BeginInvoke(callback, null);
-		}
-
-		void AsyncWork()
+		void HandleDoWork (object sender, DoWorkEventArgs e)
 		{
 			nicorepo.GetNextPage();
 		}
 
-		INicorepoWidgetItem GetWidget (INicorepoItem item)
+		void HandleRunWorkerCompleted (object sender, RunWorkerCompletedEventArgs e)
 		{
-
-			return null;
+			if (e.Error == null) {
+				Gtk.Application.Invoke (
+			delegate(object dsender, EventArgs de) {
+					foreach (INicorepoItem item in nicorepo.Items) {
+						if (item is NicorepoItemCommunityLiveBroadcast) {
+							NicorepoWidgetItemCommunityLiveBroadcast widget = new NicorepoWidgetItemCommunityLiveBroadcast ();
+							vboxMain.PackStart (widget);
+							widget.Write (item);
+							widget.Show ();
+						} else if (item is NicorepoItemUnknow) {
+							//continue;
+							NicorepoWidgetItemUnknow widget = new NicorepoWidgetItemUnknow();
+							widget.Write(item);
+							vboxMain.PackStart(widget);
+							widget.Show();
+						}
+					}
+					button.Sensitive = true;
+					button.Label = "更に読み込む";
+				});
+			} else {
+				Console.WriteLine(e.Error.Message);
+				Console.WriteLine(e.Error.Source);
+			}
 		}
 
-		void Callback (IAsyncResult r)
+		protected void OnButtonClicked (object sender, EventArgs e)
 		{
-			foreach (INicorepoItem item in nicorepo.Items) {
-				if (item is NicorepoItemCommunityLiveBroadcast) {
-					NicorepoWidgetItemCommunityLiveBroadcast widget = new NicorepoWidgetItemCommunityLiveBroadcast();
-					widget.Write(item);
-					vboxMain.PackEnd(widget,true,true,100);
-				} else if(item is NicorepoItemUnknow){
-					NicorepoWidgetItemUnknow widget = new NicorepoWidgetItemUnknow();
-					widget.Write(item);
-					vboxMain.PackEnd(widget,true,true,100);
-				}
-			}
+			button.Sensitive = false;
+			button.Label = "ロード中...";
+			bw.RunWorkerAsync();
 		}
 	}
 }
-
 

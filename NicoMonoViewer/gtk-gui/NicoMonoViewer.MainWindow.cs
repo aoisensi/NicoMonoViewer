@@ -6,13 +6,11 @@ namespace NicoMonoViewer
 	{
 		private global::Gtk.UIManager UIManager;
 		private global::Gtk.Action FAction;
-		private global::Gtk.Action quitAction;
-		private global::Gtk.Action SAction;
-		private global::Gtk.Action loginAction;
-		private global::Gtk.Action themeAction;
+		private global::Gtk.Action closeAction;
+		private global::Gtk.Action OAction;
 		private global::Gtk.VBox vbox;
 		private global::Gtk.MenuBar menubar;
-		private global::Gtk.Notebook notebook;
+		private global::NicoMonoViewer.NicorepoWidget nicorepowidget;
 		
 		protected virtual void Build ()
 		{
@@ -23,31 +21,24 @@ namespace NicoMonoViewer
 			this.FAction = new global::Gtk.Action ("FAction", global::Mono.Unix.Catalog.GetString ("ファイル(_F)"), null, null);
 			this.FAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("ファイル(_F)");
 			w1.Add (this.FAction, null);
-			this.quitAction = new global::Gtk.Action ("quitAction", global::Mono.Unix.Catalog.GetString ("終了(_X)"), null, "gtk-quit");
-			this.quitAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("終了(_X)");
-			w1.Add (this.quitAction, null);
-			this.SAction = new global::Gtk.Action ("SAction", global::Mono.Unix.Catalog.GetString ("設定(_S)"), null, null);
-			this.SAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("設定(_S)");
-			w1.Add (this.SAction, null);
-			this.loginAction = new global::Gtk.Action ("loginAction", global::Mono.Unix.Catalog.GetString ("ログイン(_S)"), null, null);
-			this.loginAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("ログイン(_S)");
-			w1.Add (this.loginAction, null);
-			this.themeAction = new global::Gtk.Action ("themeAction", global::Mono.Unix.Catalog.GetString ("テーマ(_T)"), null, null);
-			this.themeAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("テーマ(_T)");
-			w1.Add (this.themeAction, null);
+			this.closeAction = new global::Gtk.Action ("closeAction", global::Mono.Unix.Catalog.GetString ("閉じる(_C)"), null, "gtk-close");
+			this.closeAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("閉じる(_C)");
+			w1.Add (this.closeAction, null);
+			this.OAction = new global::Gtk.Action ("OAction", global::Mono.Unix.Catalog.GetString ("設定(_O)"), null, null);
+			this.OAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("設定(_O)");
+			w1.Add (this.OAction, null);
 			this.UIManager.InsertActionGroup (w1, 0);
 			this.AddAccelGroup (this.UIManager.AccelGroup);
 			this.Name = "NicoMonoViewer.MainWindow";
 			this.Title = global::Mono.Unix.Catalog.GetString ("MainWindow");
+			this.Icon = global::Stetic.IconLoader.LoadIcon (this, "gtk-close", global::Gtk.IconSize.Menu);
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
-			this.AllowShrink = true;
-			this.Gravity = ((global::Gdk.Gravity)(10));
 			// Container child NicoMonoViewer.MainWindow.Gtk.Container+ContainerChild
 			this.vbox = new global::Gtk.VBox ();
 			this.vbox.Name = "vbox";
 			this.vbox.Spacing = 6;
 			// Container child vbox.Gtk.Box+BoxChild
-			this.UIManager.AddUiFromString (@"<ui><menubar name='menubar'><menu name='FAction' action='FAction'><menuitem name='quitAction' action='quitAction'/></menu><menu name='SAction' action='SAction'><menuitem name='loginAction' action='loginAction'/><menuitem name='themeAction' action='themeAction'/></menu></menubar></ui>");
+			this.UIManager.AddUiFromString ("<ui><menubar name='menubar'><menu name='FAction' action='FAction'><menuitem name='closeAction' action='closeAction'/></menu><menu name='OAction' action='OAction'/></menubar></ui>");
 			this.menubar = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar")));
 			this.menubar.Name = "menubar";
 			this.vbox.Add (this.menubar);
@@ -56,26 +47,21 @@ namespace NicoMonoViewer
 			w2.Expand = false;
 			w2.Fill = false;
 			// Container child vbox.Gtk.Box+BoxChild
-			this.notebook = new global::Gtk.Notebook ();
-			this.notebook.CanFocus = true;
-			this.notebook.Name = "notebook";
-			this.notebook.CurrentPage = -1;
-			this.vbox.Add (this.notebook);
-			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox [this.notebook]));
+			this.nicorepowidget = new global::NicoMonoViewer.NicorepoWidget ();
+			this.nicorepowidget.Events = ((global::Gdk.EventMask)(256));
+			this.nicorepowidget.Name = "nicorepowidget";
+			this.vbox.Add (this.nicorepowidget);
+			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox [this.nicorepowidget]));
 			w3.Position = 1;
-			w3.Expand = false;
-			w3.Fill = false;
 			this.Add (this.vbox);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.DefaultWidth = 571;
-			this.DefaultHeight = 295;
+			this.DefaultWidth = 509;
+			this.DefaultHeight = 300;
 			this.Show ();
 			this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
-			this.quitAction.Activated += new global::System.EventHandler (this.OnQuitActionActivated);
-			this.loginAction.Activated += new global::System.EventHandler (this.OnLoginActionActivated);
-			this.themeAction.Activated += new global::System.EventHandler (this.OnThemeActionActivated);
+			this.closeAction.Activated += new global::System.EventHandler (this.OnCloseActionActivated);
 		}
 	}
 }

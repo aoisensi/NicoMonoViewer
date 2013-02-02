@@ -7,7 +7,7 @@ namespace NicoMonoViewer
 		private global::Gtk.Frame frame1;
 		private global::Gtk.Alignment GtkAlignment;
 		private global::Gtk.ScrolledWindow GtkScrolledWindow;
-		private global::Gtk.TextView textview1;
+		private global::Gtk.TextView textview;
 		private global::Gtk.Label GtkLabel;
 		
 		protected virtual void Build ()
@@ -15,12 +15,12 @@ namespace NicoMonoViewer
 			global::Stetic.Gui.Initialize (this);
 			// Widget NicoMonoViewer.NicorepoWidgetItemUnknow
 			global::Stetic.BinContainer.Attach (this);
-			this.HeightRequest = 100;
+			this.HeightRequest = 150;
 			this.Name = "NicoMonoViewer.NicorepoWidgetItemUnknow";
 			// Container child NicoMonoViewer.NicorepoWidgetItemUnknow.Gtk.Container+ContainerChild
 			this.frame1 = new global::Gtk.Frame ();
 			this.frame1.Name = "frame1";
-			this.frame1.ShadowType = ((global::Gtk.ShadowType)(2));
+			this.frame1.ShadowType = ((global::Gtk.ShadowType)(0));
 			// Container child frame1.Gtk.Container+ContainerChild
 			this.GtkAlignment = new global::Gtk.Alignment (0F, 0F, 1F, 1F);
 			this.GtkAlignment.Name = "GtkAlignment";
@@ -30,23 +30,22 @@ namespace NicoMonoViewer
 			this.GtkScrolledWindow.Name = "GtkScrolledWindow";
 			this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
 			// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
-			this.textview1 = new global::Gtk.TextView ();
-			this.textview1.CanFocus = true;
-			this.textview1.Name = "textview1";
-			this.textview1.Editable = false;
-			this.GtkScrolledWindow.Add (this.textview1);
+			this.textview = new global::Gtk.TextView ();
+			this.textview.CanFocus = true;
+			this.textview.Name = "textview";
+			this.GtkScrolledWindow.Add (this.textview);
 			this.GtkAlignment.Add (this.GtkScrolledWindow);
 			this.frame1.Add (this.GtkAlignment);
 			this.GtkLabel = new global::Gtk.Label ();
 			this.GtkLabel.Name = "GtkLabel";
-			this.GtkLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>わからない要素</b>");
+			this.GtkLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>不明な要素</b>");
 			this.GtkLabel.UseMarkup = true;
 			this.frame1.LabelWidget = this.GtkLabel;
 			this.Add (this.frame1);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.Show ();
+			this.Hide ();
 		}
 	}
 }

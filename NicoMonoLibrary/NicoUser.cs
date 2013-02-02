@@ -4,12 +4,14 @@ using System.Web;
 using System.Net;
 using System.IO;
 using System.Collections;
+using HtmlAgilityPack;
 
 namespace NicoMonoLibrary
 {
 	public class NicoUser
 	{
 		CookieContainer _cc;
+		string _token;
 		public NicoUser (string email, string password)
 		{
 			string url = "https://secure.nicovideo.jp/secure/login?site=nicolive";
@@ -57,15 +59,39 @@ namespace NicoMonoLibrary
 			//StreamWriter sw = new StreamWriter(@"C:hogeNicoLiveOneCommentGetter.log");
 			//sw.Write(xml);
 			//sw.Close();
+			GetToken();
 		}
 		public NicoUser (Cookie cookie)
 		{
 			_cc = new CookieContainer();
 			_cc.Add(cookie);
+			GetToken();
 		}
+
+		private void GetToken()
+		{
+			string url = "http://www.nicovideo.jp/my/top";
+			HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+			req.CookieContainer = _cc;
+			WebResponse res = req.GetResponse();
+			Stream st = res.GetResponseStream();
+			HtmlDocument doc = new HtmlDocument();
+			doc.Load(st);
+			_token = doc.DocumentNode.SelectSingleNode("//script[@id='nicoru-token']").Attributes["data-nicoru-token"].Value;
+			st.Close();
+			res.Close();
+
+		}
+
 		public CookieContainer cc {
 			get {
 				return _cc;
+			}
+		}
+
+		public string Token {
+			get {
+				return _token;
 			}
 		}
 	}
