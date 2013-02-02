@@ -8,18 +8,11 @@ namespace NicoMonoLibrary
 		public static INicorepoItem CreateInstance (HtmlNode node)
 		{
 			string[] className = node.Attributes ["class"].Value.Split (' ');
-			string type = className [className.Length - 1];
-			INicorepoItem item;
-			switch (type) {
-			case "log-community-live-broadcast":
-				item = new NicorepoItemCommunityLiveBroadcast();
-				break;
-			default:
-				item = new NicorepoItemUnknow();
-				break;
+			if(Array.IndexOf(className,"log-community-live-broadcast")){
+				return new NicorepoItemCommunityLiveBroadcast().Parser(node);
+			}else{
+				return new NicorepoItemUnknow().Parser(node);
 			}
-			item.Parser(node);
-			return item;
 		}
 	}
 }
