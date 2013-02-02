@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEST", "TEST\TEST.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{D4A60A05-6D20-4D4F-8786-C8B720F1DF38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{96E76568-4F69-46F4-B400-246DAF507AFC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -25,6 +27,10 @@ Global
 		{88097499-A061-4B8E-AB19-5DFE638D59D8}.Debug|x86.Build.0 = Debug|x86
 		{88097499-A061-4B8E-AB19-5DFE638D59D8}.Release|x86.ActiveCfg = Release|x86
 		{88097499-A061-4B8E-AB19-5DFE638D59D8}.Release|x86.Build.0 = Release|x86
+		{96E76568-4F69-46F4-B400-246DAF507AFC}.Debug|x86.ActiveCfg = Debug|x86
+		{96E76568-4F69-46F4-B400-246DAF507AFC}.Debug|x86.Build.0 = Debug|x86
+		{96E76568-4F69-46F4-B400-246DAF507AFC}.Release|x86.ActiveCfg = Release|x86
+		{96E76568-4F69-46F4-B400-246DAF507AFC}.Release|x86.Build.0 = Release|x86
 		{97E989F3-89B1-4A36-8A9A-21470C4207C0}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{97E989F3-89B1-4A36-8A9A-21470C4207C0}.Debug|x86.Build.0 = Debug|Any CPU
 		{97E989F3-89B1-4A36-8A9A-21470C4207C0}.Release|x86.ActiveCfg = Release|Any CPU

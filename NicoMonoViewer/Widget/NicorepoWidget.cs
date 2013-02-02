@@ -33,28 +33,37 @@ namespace NicoMonoViewer
 		void HandleRunWorkerCompleted (object sender, RunWorkerCompletedEventArgs e)
 		{
 			if (e.Error == null) {
+				foreach (INicorepoItem item in nicorepo.Items) {
+					Gtk.Application.Invoke (
+						delegate(object dsender, EventArgs de) {
+							if (item is NicorepoItemCommunityLiveBroadcast) {
+								NicorepoWidgetItemCommunityLiveBroadcast widget = new NicorepoWidgetItemCommunityLiveBroadcast ();
+								vboxMain.PackStart (widget);
+								widget.Write (item);
+								widget.Show ();
+							} else if (item is NicorepoItemUnknow) {
+								//continue;
+								NicorepoWidgetItemUnknow widget = new NicorepoWidgetItemUnknow();
+								widget.Write(item);
+								vboxMain.PackStart(widget);
+								widget.Show();
+							}
+					});
+					System.Threading.Thread.Sleep(1000);
+				}
 				Gtk.Application.Invoke (
-			delegate(object dsender, EventArgs de) {
-					foreach (INicorepoItem item in nicorepo.Items) {
-						if (item is NicorepoItemCommunityLiveBroadcast) {
-							NicorepoWidgetItemCommunityLiveBroadcast widget = new NicorepoWidgetItemCommunityLiveBroadcast ();
-							vboxMain.PackStart (widget);
-							widget.Write (item);
-							widget.Show ();
-						} else if (item is NicorepoItemUnknow) {
-							//continue;
-							NicorepoWidgetItemUnknow widget = new NicorepoWidgetItemUnknow();
-							widget.Write(item);
-							vboxMain.PackStart(widget);
-							widget.Show();
-						}
-					}
-					button.Sensitive = true;
-					button.Label = "更に読み込む";
+					delegate(object dsender, EventArgs de) {
+						button.Sensitive = true;
+						button.Label = "更に読み込む";
 				});
 			} else {
 				Console.WriteLine(e.Error.Message);
 				Console.WriteLine(e.Error.Source);
+				Gtk.Application.Invoke (
+					delegate(object dsender, EventArgs de) {
+						button.Sensitive = true;
+						button.Label = "エラーが発生しました";
+					});
 			}
 		}
 

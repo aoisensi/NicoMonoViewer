@@ -47,10 +47,7 @@ namespace NicoMonoLibrary
 			WebResponse res = req.GetResponse();
 			DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Json.Nicoru));
 			Stream resst = res.GetResponseStream();
-			Console.WriteLine(new StreamReader(resst).ReadToEnd());
-			Json.Nicoru result = (Json.Nicoru)ser.ReadObject(resst);
-			return result;
+			return (Json.Nicoru)ser.ReadObject(resst);
 		}
 	}
-
 }

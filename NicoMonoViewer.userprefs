@@ -1,19 +1,21 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="NicoMonoViewer/Widget/NicorepoWidgetItem/Sub/NicorepoWidgetItemSubNicoru.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="NicoMonoLibrary/Nicoru.cs">
     <Files>
-      <File FileName="NicoMonoViewer/Widget/NicorepoWidgetItem/Sub/NicorepoWidgetItemSubNicoru.cs" Line="32" Column="27" />
+      <File FileName="NicoMonoLibrary/JsonClass.cs" Line="10" Column="20" />
+      <File FileName="NicoMonoViewer/Widget/NicorepoWidgetItem/Sub/NicorepoWidgetItemSubNicoru.cs" Line="74" Column="20" />
+      <File FileName="NicoMonoLibrary/Nicoru.cs" Line="46" Column="15" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="NicoMonoLibrary" expanded="True" />
+          <Node name="NicoMonoLibrary" expanded="True">
+            <Node name="Nicoru.cs" selected="True" />
+          </Node>
           <Node name="NicoMonoViewer" expanded="True">
             <Node name="Widget" expanded="True">
               <Node name="NicorepoWidgetItem" expanded="True">
-                <Node name="Sub" expanded="True">
-                  <Node name="NicorepoWidgetItemSubNicoru.cs" selected="True" />
-                </Node>
+                <Node name="Sub" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -31,7 +33,9 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/home/aoisensi/Documents/NicoMonoViewer/NicoMonoLibrary/Nicoru.cs" line="52" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="NicoMonoLibrary\Nicorepo.cs" line="45" offsetX="1013" offsetY="660" expression="doc.DocumentNode.ChildNodes" liveUpdate="False" />

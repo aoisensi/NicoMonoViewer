@@ -75,8 +75,9 @@ namespace NicoMonoViewer
 					Gtk.Application.Invoke (delegate(object isender, EventArgs ie) {
 						if (de.Error == null) {
 							image.Pixbuf = icon [3];
+							nicorare++;
 						} else {
-							Console.WriteLine(de.Error.InnerException.Message);
+							Console.WriteLine(de.Error.Message);
 							image.Pixbuf = icon [4];
 							canClick = true;
 						}

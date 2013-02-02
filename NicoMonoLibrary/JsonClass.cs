@@ -10,24 +10,24 @@ namespace NicoMonoLibrary
 		public class Nicoru{
 			[DataMember(Name = "status")]
 			public string Status{get;set;}
-			
+
 			[DataMember(Name = "statuscode")]
 			public int StatusCode{get;set;}
 			
 			[DataMember(Name = "result")]
-			public Result Result{get;set;}
-			
+			public Json.Result Result{get;set;}
+
 			[DataMember(Name = "error")]
-			public Error Error{get;set;}
+			public Json.Error Error{get;set;}
 		}
 		
 		[DataContract]
 		public class Result{
 			[DataMember(Name = "items")]
-			public Items[] Items{get;set;}
+			public Json.Items[] Items{get;set;}
 
 			[DataMember(Name = "errors")]
-			public Errors[] Errors{get;set;}
+			public Json.Errors[] Errors{get;set;}
 		}
 		
 		[DataContract]
