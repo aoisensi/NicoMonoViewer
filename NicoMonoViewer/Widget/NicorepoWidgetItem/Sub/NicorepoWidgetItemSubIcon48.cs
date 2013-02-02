@@ -11,6 +11,8 @@ namespace NicoMonoViewer
 	public partial class NicorepoWidgetItemSubIcon48 : Gtk.Bin
 	{
 		string _url;
+		static Stream nst = Assembly.GetExecutingAssembly().GetManifestResourceStream("NicoMonoViewer.noimage.jpg");
+		static Pixbuf noimage = new PixbufLoader(nst).Pixbuf;
 		public NicorepoWidgetItemSubIcon48 ()
 		{
 			this.Build ();
@@ -21,7 +23,11 @@ namespace NicoMonoViewer
 			gw.DoWork += HandleDoWork;
 			gw.RunWorkerCompleted += delegate(object sender, RunWorkerCompletedEventArgs e) {
 				Gtk.Application.Invoke(delegate(object isender, EventArgs ie) {
-					image.Pixbuf = ((PixbufLoader)e.Result).Pixbuf;
+					if(e.Result != null){
+						image.Pixbuf = ((PixbufLoader)e.Result).Pixbuf;
+					}else{
+						image.Pixbuf = noimage;
+					}
 				});
 			};
 			gw.RunWorkerAsync();
@@ -35,16 +41,13 @@ namespace NicoMonoViewer
 				WebResponse res = req.GetResponse ();
 				
 				st = res.GetResponseStream ();
+				e.Result = new Gdk.PixbufLoader (st, 48, 48);
 				
 			} catch (WebException ex) {
-				if(ex.Status == WebExceptionStatus.ProtocolError){
-					Assembly asm = Assembly.GetExecutingAssembly();
-					st = asm.GetManifestResourceStream("NicoMonoViewer.noimage.jpg");
-				}else{
+				if(ex.Status != WebExceptionStatus.ProtocolError){
 					throw ex;
 				}
 			}
-			e.Result = new Gdk.PixbufLoader (st, 48, 48);
 		}
 	}
 }
