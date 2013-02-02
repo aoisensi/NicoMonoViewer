@@ -9,7 +9,7 @@ namespace NicoMonoViewer
 		private global::Gtk.VBox vbox;
 		private global::Gtk.HBox hbox;
 		private global::Gtk.VBox vboxIcon;
-		private global::Gtk.Image imageIcon;
+		private global::NicoMonoViewer.NicorepoWidgetItemSubIcon48 nicorepowidgetitemsubicon48;
 		private global::Gtk.VBox vboxMain;
 		private global::Gtk.HBox hboxMain;
 		private global::Gtk.Button buttonCommunity;
@@ -53,13 +53,13 @@ namespace NicoMonoViewer
 			this.vboxIcon.Name = "vboxIcon";
 			this.vboxIcon.Spacing = 6;
 			// Container child vboxIcon.Gtk.Box+BoxChild
-			this.imageIcon = new global::Gtk.Image ();
-			this.imageIcon.WidthRequest = 48;
-			this.imageIcon.HeightRequest = 48;
-			this.imageIcon.Name = "imageIcon";
-			this.imageIcon.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("NicoMonoViewer.noimage.jpg");
-			this.vboxIcon.Add (this.imageIcon);
-			global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vboxIcon [this.imageIcon]));
+			this.nicorepowidgetitemsubicon48 = new global::NicoMonoViewer.NicorepoWidgetItemSubIcon48 ();
+			this.nicorepowidgetitemsubicon48.WidthRequest = 48;
+			this.nicorepowidgetitemsubicon48.HeightRequest = 48;
+			this.nicorepowidgetitemsubicon48.Events = ((global::Gdk.EventMask)(256));
+			this.nicorepowidgetitemsubicon48.Name = "nicorepowidgetitemsubicon48";
+			this.vboxIcon.Add (this.nicorepowidgetitemsubicon48);
+			global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vboxIcon [this.nicorepowidgetitemsubicon48]));
 			w1.Position = 0;
 			w1.Expand = false;
 			w1.Fill = false;

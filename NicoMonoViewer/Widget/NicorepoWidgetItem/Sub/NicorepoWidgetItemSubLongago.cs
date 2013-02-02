@@ -1,17 +1,19 @@
 using System;
+using System.Threading;
 
 namespace NicoMonoViewer
 {
 	[System.ComponentModel.ToolboxItem(true)]
 	public partial class NicorepoWidgetItemSubLongago : Gtk.Bin
 	{
+		//DateTime _datetime;
 		public NicorepoWidgetItemSubLongago ()
 		{
 			this.Build ();
 		}
-
 		public void Write (DateTime datetime)
 		{
+			//_datetime = datetime;
 			TimeSpan span = DateTime.Now - datetime;
 			if ((int)span.TotalDays > 0) {
 				label.Text = String.Format ("{0}日前", (int)span.TotalDays);

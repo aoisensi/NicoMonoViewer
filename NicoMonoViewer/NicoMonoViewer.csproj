@@ -86,6 +86,8 @@
     <Compile Include="gtk-gui\NicoMonoViewer.NicorepoWidgetItemSubLongago.cs" />
     <Compile Include="Widget\NicorepoWidgetItem\Sub\NicorepoWidgetItemSubNicoru.cs" />
     <Compile Include="gtk-gui\NicoMonoViewer.NicorepoWidgetItemSubNicoru.cs" />
+    <Compile Include="Widget\NicorepoWidgetItem\Sub\NicorepoWidgetItemSubIcon48.cs" />
+    <Compile Include="gtk-gui\NicoMonoViewer.NicorepoWidgetItemSubIcon48.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

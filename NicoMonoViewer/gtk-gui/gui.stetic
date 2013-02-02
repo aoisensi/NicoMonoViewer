@@ -191,11 +191,11 @@
                         <property name="MemberName" />
                         <property name="Spacing">6</property>
                         <child>
-                          <widget class="Gtk.Image" id="imageIcon">
+                          <widget class="NicoMonoViewer.NicorepoWidgetItemSubIcon48" id="nicorepowidgetitemsubicon48">
                             <property name="MemberName" />
                             <property name="WidthRequest">48</property>
                             <property name="HeightRequest">48</property>
-                            <property name="Pixbuf">resource:NicoMonoViewer.noimage.jpg</property>
+                            <property name="Events">ButtonPressMask</property>
                           </widget>
                           <packing>
                             <property name="Position">0</property>
@@ -464,6 +464,19 @@
             </child>
           </widget>
         </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Bin" id="NicoMonoViewer.NicorepoWidgetItemSubIcon48" design-size="48 48">
+    <property name="MemberName" />
+    <property name="WidthRequest">48</property>
+    <property name="HeightRequest">48</property>
+    <property name="Visible">False</property>
+    <child>
+      <widget class="Gtk.Image" id="image">
+        <property name="MemberName" />
+        <property name="WidthRequest">48</property>
+        <property name="HeightRequest">48</property>
       </widget>
     </child>
   </widget>
