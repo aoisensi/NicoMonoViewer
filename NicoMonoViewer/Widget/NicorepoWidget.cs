@@ -36,7 +36,12 @@ namespace NicoMonoViewer
 				foreach (INicorepoItem item in nicorepo.Items) {
 					Gtk.Application.Invoke (
 						delegate(object dsender, EventArgs de) {
-							if (item is NicorepoItemCommunityLiveBroadcast) {
+							 if (item is NicorepoItemCommunityLiveReserve) {
+								NicorepoWidgetItemCommunityLiveReserve widget = new NicorepoWidgetItemCommunityLiveReserve();
+								vboxMain.PackStart(widget);
+								widget.Write(item);
+								widget.Show();
+							} else if (item is NicorepoItemCommunityLiveBroadcast) {
 								NicorepoWidgetItemCommunityLiveBroadcast widget = new NicorepoWidgetItemCommunityLiveBroadcast ();
 								vboxMain.PackStart (widget);
 								widget.Write (item);

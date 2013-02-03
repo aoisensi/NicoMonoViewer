@@ -50,6 +50,7 @@
     <Compile Include="NicorepoItem\Sub\NicorepoItemSubNicoru.cs" />
     <Compile Include="Nicoru.cs" />
     <Compile Include="JsonClass.cs" />
+    <Compile Include="NicorepoItem\NicorepoItemCommunityLiveReserve.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -6,7 +6,6 @@ namespace NicoMonoLibrary
 	class NicorepoItemSubLongago
 	{
 		HtmlNode _node;
-		bool _nicoried = false;
 		public NicorepoItemSubLongago(HtmlNode node)
 		{
 			_node = node;

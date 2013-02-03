@@ -9,8 +9,10 @@ namespace NicoMonoLibrary
 		{
 			string[] className = node.Attributes ["class"].Value.Split (' ');
 			INicorepoItem item;
-			if(Array.IndexOf(className,"log-community-live-broadcast") != -1){
-				item = new NicorepoItemCommunityLiveBroadcast();
+			if (Array.IndexOf (className, "log-community-live-broadcast") != -1) {
+				item = new NicorepoItemCommunityLiveBroadcast ();
+			}else if(Array.IndexOf(className,"log-community-live-reserve") != -1){
+				item = new NicorepoItemCommunityLiveReserve();
 			}else{
 				item = new NicorepoItemUnknow();
 			}

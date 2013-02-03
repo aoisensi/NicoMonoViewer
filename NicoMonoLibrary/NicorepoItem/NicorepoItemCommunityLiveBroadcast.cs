@@ -5,8 +5,10 @@ namespace NicoMonoLibrary
 {
 	public class NicorepoItemCommunityLiveBroadcast : INicorepoItem
 	{
-		public string ClassName { get { return "log-community-live-broadcast";	} }
-		
+		public string ClassName { get { return className;	} }
+
+		const string className = "log-community-live-broadcast";
+
 		string communityURL;
 		string communityName;
 		string communityThumbnailURL;
@@ -17,7 +19,7 @@ namespace NicoMonoLibrary
 		NicorepoItemSubLongago longago;
 		NicorepoItemSubNicoru nicoru;
 
-		public void Parser (HtmlNode node)
+		public virtual void Parser (HtmlNode node)
 		{
 			communityThumbnailURL = node.SelectSingleNode("div[@class='log-author ']/a/img[@class='nicorepo-lazyimage']").Attributes["data-src"].Value;
 			communityURL = node.SelectSingleNode("div[@class='log-content']/div[@class='log-body']/a[@class='author-community']").Attributes["href"].Value;

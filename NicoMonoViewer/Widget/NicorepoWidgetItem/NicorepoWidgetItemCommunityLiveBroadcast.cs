@@ -14,10 +14,9 @@ namespace NicoMonoViewer
 		public NicorepoWidgetItemCommunityLiveBroadcast ()
 		{
 			this.Build ();
-
 		}
 
-		public void Write (INicorepoItem iitem)
+		public virtual void Write (INicorepoItem iitem)
 		{
 			NicorepoItemCommunityLiveBroadcast item = (NicorepoItemCommunityLiveBroadcast)iitem;
 			labelUser.Text = item.UserName;
@@ -26,6 +25,24 @@ namespace NicoMonoViewer
 			nicorepowidgetitemsublongago.Write(item.Longago);
 			nicorepowidgetitemsubnicoru.Write(item.Nicoru);
 			nicorepowidgetitemsubicon48.Write(item.CommunityThumbnailURL);
+		}
+
+		protected Gtk.Label TitleLabel{
+			get{
+				return GtkLabel;
+			}
+		}
+
+		protected Gtk.HBox HBoxMain{
+			get{
+				return hboxMain;
+			}
+		}
+
+		protected Gtk.Label LabelSan{
+			get{
+				return labelSan;
+			}
 		}
 	}
 }

@@ -44,9 +44,7 @@ namespace NicoMonoViewer
 				e.Result = new Gdk.PixbufLoader (st, 48, 48);
 				
 			} catch (WebException ex) {
-				if(ex.Status != WebExceptionStatus.ProtocolError){
-					throw ex;
-				}
+				//do not
 			}
 		}
 	}
