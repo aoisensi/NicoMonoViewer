@@ -86,9 +86,13 @@
     <Compile Include="gtk-gui\NicoMonoViewer.NicorepoWidgetItemSubLongago.cs" />
     <Compile Include="Widget\NicorepoWidgetItem\Sub\NicorepoWidgetItemSubNicoru.cs" />
     <Compile Include="gtk-gui\NicoMonoViewer.NicorepoWidgetItemSubNicoru.cs" />
-    <Compile Include="Widget\NicorepoWidgetItem\Sub\NicorepoWidgetItemSubIcon48.cs" />
-    <Compile Include="gtk-gui\NicoMonoViewer.NicorepoWidgetItemSubIcon48.cs" />
     <Compile Include="Widget\NicorepoWidgetItem\NicorepoWidgetItemCommunityLiveReserve.cs" />
+    <Compile Include="Widget\NicorepoWidgetItem\NicorepoWidgetItemUserActionStamp.cs" />
+    <Compile Include="gtk-gui\NicoMonoViewer.NicorepoWidgetItemUserActionStamp.cs" />
+    <Compile Include="Widget\NicorepoWidgetItem\Sub\NicorepoWidgetItemSubComment.cs" />
+    <Compile Include="gtk-gui\NicoMonoViewer.NicorepoWidgetItemSubComment.cs" />
+    <Compile Include="Widget\NicorepoWidgetItem\Sub\NicorepoWidgetItemSubIcon.cs" />
+    <Compile Include="gtk-gui\NicoMonoViewer.NicorepoWidgetItemSubIcon.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

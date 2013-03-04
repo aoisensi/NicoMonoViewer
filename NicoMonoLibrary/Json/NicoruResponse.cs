@@ -7,7 +7,7 @@ namespace NicoMonoLibrary
 	namespace Json
 	{
 		[DataContract]
-		public class Nicoru{
+		public class NicoruResponse{
 			[DataMember(Name = "status")]
 			public string Status{get;set;}
 
@@ -20,12 +20,12 @@ namespace NicoMonoLibrary
 			[DataMember(Name = "error")]
 			public Json.Error Error{get;set;}
 		}
-		
+
 		[DataContract]
 		public class Result{
 			[DataMember(Name = "items")]
 			public Json.Items[] Items{get;set;}
-
+			
 			[DataMember(Name = "errors")]
 			public Json.Errors[] Errors{get;set;}
 		}
@@ -47,14 +47,13 @@ namespace NicoMonoLibrary
 			[DataMember(Name = "description")]
 			public string Description{get;set;}
 		}
-
+		
 		public class Errors{
 			[DataMember(Name = "itemId")]
 			public string ItemId{get;set;}
-
+			
 			[DataMember(Name = "code")]
 			public string Code{get;set;}
 		}
 	}
 }
-

@@ -36,7 +36,12 @@ namespace NicoMonoViewer
 				foreach (INicorepoItem item in nicorepo.Items) {
 					Gtk.Application.Invoke (
 						delegate(object dsender, EventArgs de) {
-							 if (item is NicorepoItemCommunityLiveReserve) {
+							if (item is NicorepoItemUserActionStamp) {
+								NicorepoWidgetItemUserActionStamp widget = new NicorepoWidgetItemUserActionStamp();
+								vboxMain.PackStart(widget);
+								widget.Write(item);
+								widget.Show();
+							} else if (item is NicorepoItemCommunityLiveReserve) {
 								NicorepoWidgetItemCommunityLiveReserve widget = new NicorepoWidgetItemCommunityLiveReserve();
 								vboxMain.PackStart(widget);
 								widget.Write(item);
@@ -64,6 +69,8 @@ namespace NicoMonoViewer
 			} else {
 				Console.WriteLine(e.Error.Message);
 				Console.WriteLine(e.Error.Source);
+				Console.WriteLine(e.Error.StackTrace);
+				Console.WriteLine(e.Error.HelpLink);
 				Gtk.Application.Invoke (
 					delegate(object dsender, EventArgs de) {
 						button.Sensitive = true;

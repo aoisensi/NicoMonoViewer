@@ -48,13 +48,21 @@
     <Compile Include="NicorepoItem\INicorepoItem.cs" />
     <Compile Include="NicorepoItem\Sub\NicorepoItemSubLongago.cs" />
     <Compile Include="NicorepoItem\Sub\NicorepoItemSubNicoru.cs" />
-    <Compile Include="Nicoru.cs" />
-    <Compile Include="JsonClass.cs" />
     <Compile Include="NicorepoItem\NicorepoItemCommunityLiveReserve.cs" />
+    <Compile Include="NicorepoItem\NicorepoItemUserActionStamp.cs" />
+    <Compile Include="NicorepoItem\Sub\NicorepoItemSubComment.cs" />
+    <Compile Include="API\Nicoru.cs" />
+    <Compile Include="API\NicorepoComment.cs" />
+    <Compile Include="NicorepoItem\Sub\NicorepoItemSubCommentItem.cs" />
+    <Compile Include="Json\NicoruResponse.cs" />
+    <Compile Include="Json\NicorepoResResponse.cs" />
+    <Compile Include="FormAction.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="NicorepoItem\" />
     <Folder Include="NicorepoItem\Sub\" />
+    <Folder Include="API\" />
+    <Folder Include="Json\" />
   </ItemGroup>
 </Project>

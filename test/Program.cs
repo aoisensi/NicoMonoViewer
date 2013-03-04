@@ -6,7 +6,7 @@ namespace test
 	{
 		public static void Main (string[] args)
 		{
-			var t = typeof(NicoMonoLibrary.Json.Nicoru);
+			var t = typeof(NicoMonoLibrary.Json.NicoruResponse);
 		}
 	}
 }

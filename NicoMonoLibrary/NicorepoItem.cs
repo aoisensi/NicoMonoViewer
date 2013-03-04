@@ -11,10 +11,12 @@ namespace NicoMonoLibrary
 			INicorepoItem item;
 			if (Array.IndexOf (className, "log-community-live-broadcast") != -1) {
 				item = new NicorepoItemCommunityLiveBroadcast ();
-			}else if(Array.IndexOf(className,"log-community-live-reserve") != -1){
-				item = new NicorepoItemCommunityLiveReserve();
-			}else{
-				item = new NicorepoItemUnknow();
+			} else if (Array.IndexOf (className, "log-community-live-reserve") != -1) {
+				item = new NicorepoItemCommunityLiveReserve ();
+			} else if (Array.IndexOf (className, "log-user-action-stamp") != -1) {
+				item = new NicorepoItemUserActionStamp();
+			} else {
+				item = new NicorepoItemUnknow ();
 			}
 			item.Parser(node);
 			return item;

@@ -1,15 +1,23 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="NicoMonoViewer/Widget/NicorepoWidgetItem/NicorepoWidgetItemUserActionStamp.cs">
+    <Files>
+      <File FileName="NicoMonoViewer/Widget/NicorepoWidgetItem/Sub/NicorepoWidgetItemSubComment.cs" Line="1" Column="1" />
+      <File FileName="NicoMonoViewer/Widget/NicorepoWidgetItem/Sub/NicorepoWidgetItemSubIcon.cs" Line="11" Column="48" />
+      <File FileName="NicoMonoViewer/Widget/NicorepoWidgetItem/NicorepoWidgetItemCommunityLiveBroadcast.cs" Line="27" Column="25" />
+      <File FileName="NicoMonoViewer/Widget/NicorepoWidgetItem/NicorepoWidgetItemUserActionStamp.cs" Line="21" Column="6" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="NicoMonoLibrary" expanded="True">
-            <Node name="NicorepoItem" expanded="True" />
+            <Node name="API" expanded="True" />
           </Node>
-          <Node name="NicoMonoViewer" expanded="True">
+          <Node name="NicoMonoViewer" expanded="True" selected="True">
             <Node name="Widget" expanded="True">
-              <Node name="NicorepoWidgetItem" expanded="True" />
+              <Node name="NicorepoWidgetItem" expanded="True">
+                <Node name="Sub" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>

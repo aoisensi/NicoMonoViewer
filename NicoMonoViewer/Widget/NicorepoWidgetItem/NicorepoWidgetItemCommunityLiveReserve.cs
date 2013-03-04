@@ -9,7 +9,7 @@ namespace NicoMonoViewer
 		Gtk.Label labelNi;
 		public NicorepoWidgetItemCommunityLiveReserve () : base()
 		{
-			LabelSan.Text = "さんが";
+			LabelSan.Text = "さんが";                                                     
 
 			TitleLabel.LabelProp = "<b>コミュニティ放送予約通知</b>";
 

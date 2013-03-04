@@ -24,7 +24,7 @@ namespace NicoMonoViewer
 			labelCommunity.Text = item.CommunityName;
 			nicorepowidgetitemsublongago.Write(item.Longago);
 			nicorepowidgetitemsubnicoru.Write(item.Nicoru);
-			nicorepowidgetitemsubicon48.Write(item.CommunityThumbnailURL);
+			//nicorepowidgetitemsubicon48.Write(item.CommunityThumbnailURL);
 		}
 
 		protected Gtk.Label TitleLabel{
